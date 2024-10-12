@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-jost;
+  }
+}
+
+@layer components {
+  .container {
+    @apply min-[1440px]:max-w-[1440px] mx-auto;
+  }
+
+  .content-container {
+    @apply px-24;
+  }
+}

@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
+import { OverlayContainer } from "src/components/ui/overlay";
 
 export const AppRouterRoot = () => {
     return (
         <>
-            <h1>AppRouterRoot</h1>
+            <OverlayContainer />
             <Outlet />
         </>
-    )
-}
+    );
+};

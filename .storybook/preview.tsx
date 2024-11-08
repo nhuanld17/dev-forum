@@ -7,7 +7,7 @@ import "../src/index.css";
 
 const preview: Preview = {
     parameters: {
-        constrols: {
+        controls: {
             matchers: {
                 color: /(background|color)$/i,
                 date: /Date$/i,
@@ -17,13 +17,13 @@ const preview: Preview = {
 };
 
 export const decorators = [
-    (Story) => {
+    (Story) => (
         <QueryClientProvider client={new QueryClient()}>
             <Router>
                 <Story/>
             </Router>
         </QueryClientProvider>
-    }
+    ),
 ]
 
 export default preview;

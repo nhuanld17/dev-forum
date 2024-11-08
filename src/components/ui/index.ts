@@ -4,6 +4,6 @@ export * from "./link";
 export * from "./breadcrumbs";
 export * from "./nav-link";
 export * from "./dropdowns";
-export * from "./forms";
+export * from "./form";
 export * from "./cards";
 export * from "./overlay";

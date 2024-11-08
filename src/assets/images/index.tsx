@@ -1,7 +1,7 @@
-import { avatar } from "./images-dashboard"
+import { login_banner } from "./images-dashboard";
 
 const image = {
-    avatar,
+    login_banner,
 } satisfies Record<string, string>;
 
 export type LocalImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {

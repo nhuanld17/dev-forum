@@ -4,16 +4,16 @@ import { Button } from "../buttons";
 const icon = {
     info: (
         <LocalIcon
-            iconName="amex"
+            iconName="circleInfo"
             className="text-blue-500"
             width={36}
             height={36}
         />
 
     ),
-    success: (
+    success : (
         <LocalIcon
-            iconName="amex"
+            iconName="circleCheckmark"
             className="text-green-500"
             width={36}
             height={36}
@@ -21,7 +21,7 @@ const icon = {
     ),
     warning: (
         <LocalIcon
-            iconName="amex"
+            iconName="circleWarn"
             className="text-yellow-500"
             width={36}
             height={36}
@@ -29,7 +29,7 @@ const icon = {
     ),
     error: (
         <LocalIcon
-            iconName="amex"
+            iconName="circleXmark"
             className="text-red-500"
             width={36}
             height={36}
@@ -65,7 +65,7 @@ export const Toast = ({
                 className="pointer-events-auto"
             >
                 <LocalIcon
-                    iconName="amex"
+                    iconName="circleXmark"
                     className="text-gray-500"
                 />
             </Button>

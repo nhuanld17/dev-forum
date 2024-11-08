@@ -1,17 +1,37 @@
-export * from "./icon-dashboard";
-export * from "./icon-login";
+import { briefcase_duotone,
+        briefcaseblue,
+        buildings_duotone,
+        facebook,
+        fi_arrow_right,
+        fi_eye,
+        google,
+    } from "./icon-login";
+import { circleCheckmark
+    , circleInfo
+    , circleWarn
+    , circleXmark
+ } from "./icon-dashboard";
 
-import { amex } from "./icon-dashboard";
 import React from "react";
 
-const icon = {
-    amex,
+export const icon = {
+    briefcase_duotone,
+    briefcaseblue,
+    buildings_duotone,
+    facebook,
+    fi_arrow_right,
+    fi_eye,
+    google,
+    circleCheckmark,
+    circleInfo,
+    circleWarn,
+    circleXmark,
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 >;
 
-type ReactIconProps = React.SVGProps<SVGSVGElement> & {
+export type ReactIconProps = React.SVGProps<SVGSVGElement> & {
     iconName: keyof typeof icon;
     height?: number | "auto";
     width?: number | "auto";
@@ -32,5 +52,6 @@ export const LocalIcon = ({
         />
     );
 };
+LocalIcon({ iconName: "circleCheckmark", height: 36, width: 36 });
 
 

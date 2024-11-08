@@ -10,12 +10,12 @@ export default defineConfig({
       src: "/src",
     },
   },
-  // server: {
-  //   port: 3000,
-  //   proxy: {
-  //     "/public/image": "http://localhost:8080",
-  //   },
-  // },
+  server: {
+    port: 3000,
+    proxy: {
+      // "/public/image": "http://localhost:8080",
+    },
+  },
   preview: {
     port: 3000,
   },

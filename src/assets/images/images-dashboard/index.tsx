@@ -1,3 +1,3 @@
-import avatar from './avatar.png';
+import login_banner from './login-banner.png';
 
-export { avatar };
+export {login_banner };

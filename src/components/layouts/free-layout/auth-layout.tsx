@@ -3,9 +3,21 @@ import { useLocation } from "react-router-dom";
 import { LocalIcon, icon} from "src/assets/icons";
 import { LocalImage, LocalImageProps } from "src/assets/images";
 
+/**
+ * AuthLayout is a layout for authentication pages
+ * @param {React.ReactNode} children
+ * @returns {JSX.Element}
+ */
 export const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+    // get current location for dynamic rendering
     const location = useLocation();
 
+    /**
+     * custom icon component use useMemo to prevent re-render
+     * @param {string} iconValue 
+     * @param {string} className
+     * @returns {JSX.Element}
+     */
     const MyIcon = ({ iconValue, className }: { iconValue: string, className: string }) => {
         const Icon = useMemo<React.ReactNode>(() => {
             const src = iconValue as keyof typeof icon;
@@ -19,8 +31,12 @@ export const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         }, [iconValue]);
       
         return Icon;
-      };
+    };
 
+    /**
+     * custom image component use useMemo to prevent re-render
+     * @returns {JSX.Element}
+     */
     const Image = useMemo<React.ReactNode>(() => {
         const src = ((): LocalImageProps["src"] => {
             return "login_banner";  
@@ -34,6 +50,11 @@ export const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         );
     }, [location.pathname]);
 
+    /**
+     * custom box component
+     * @param {any} props
+     * @returns {JSX.Element}
+     */
     const box = (props: any) => {
         return (
             <div className="flex flex-col gap-5 w-[180px] h-[144px]">
@@ -48,12 +69,12 @@ export const AuthLayout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center ml-28">
                 <div className="flex items-center justify-center">
                     {children}
                 </div>
             </div>
-            <div className="flex gap-2 items-center absolute left-20 top-5">
+            <div className="flex gap-2 items-center absolute left-28 top-5">
                 <div>
                     {MyIcon({ iconValue: "briefcaseblue" , className: "w-10 h-10" })}
                 </div>

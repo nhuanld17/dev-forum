@@ -41,7 +41,7 @@ export type ToastProps = {
     title: string;
     message: string;
     type: keyof typeof icon;
-    onDismiss: () => void;
+    onDismiss?: () => void;
 };
 
 export const Toast = ({

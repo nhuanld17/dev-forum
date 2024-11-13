@@ -9,8 +9,8 @@ export type AuthFormProps<Schema, TFormValues extends FieldValues> = FormProps<
     Schema,
     TFormValues
 > & {
-    h1: string;
-    h2: string;
+    h1?: string;
+    h2?: string;
 };
 
 export const AuthForm = <

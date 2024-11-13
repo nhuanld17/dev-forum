@@ -5,6 +5,7 @@ import { briefcase_duotone,
         fi_arrow_right,
         fi_eye,
         google,
+        successful
     } from "./icon-login";
 import { circleCheckmark
     , circleInfo
@@ -26,6 +27,7 @@ export const icon = {
     circleInfo,
     circleWarn,
     circleXmark,
+    successful
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

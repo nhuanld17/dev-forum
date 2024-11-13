@@ -1,3 +1,5 @@
+import { ForgotPasswordForm } from "src/features/auth";
+
 export const ForgotPasswordRoute = () => {
-    return <div>ForgotPassword</div>;
+    return <ForgotPasswordForm />;
 };

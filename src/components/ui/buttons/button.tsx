@@ -8,7 +8,7 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 filled:
-                    "border border-transparent bg-black text-white hover:bg-black/90",
+                    "border border-transparent bg-cyan-600 text-white hover:bg-black/90",
                 outlined:
                     "border border-primary bg-white text-primary hover:bg-black/10",
                 ghost: "hover:bg-black/10",
@@ -27,12 +27,22 @@ const buttonVariants = cva(
     }
 );
 
+/**
+ * type definition for ButtonProps
+ * use React.ButtonHTMLAttributes<HTMLButtonElement> to get all the props of button element
+ */
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     VariantProps<typeof buttonVariants> & {
         startIcon?: React.ReactNode;
         endIcon?: React.ReactNode;
     };
 
+/**
+ * use forwardRef to pass ref to the button element
+ * how to use with props: <Button variant="filled" size="md" startIcon={<Icon />} endIcon={<Icon />}>Button</Button>
+ * how to use with ref: <Button ref={ref}>Button</Button>
+ * how to use with HTMLButtonElement props (type, onClick, etc): <Button type="submit">Button</Button>
+ */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     function Button(
         {

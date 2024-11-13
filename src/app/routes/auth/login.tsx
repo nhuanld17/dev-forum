@@ -1,4 +1,5 @@
+import { LoginForm } from "src/features/auth";
+
 export const LoginRoute = () => {
-    // return <div>Login</div>;
-    return null;
+    return <LoginForm />;
 };

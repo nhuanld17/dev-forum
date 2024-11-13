@@ -3,6 +3,10 @@ import { FieldError } from "react-hook-form";
 import { Error } from "../error";
 import { Label } from "../label";
 
+/**
+ * Variants for the FieldWrapper component.
+ * How to use: fieldWrapperVariants({ className: "your-class-name" });
+ */
 export const fieldWrapperVariants = cva("relative");
 
 export type FieldWrapperProps = {
@@ -12,11 +16,19 @@ export type FieldWrapperProps = {
   error?: FieldError | undefined;
 };
 
+/**
+ * This is useful when you want to use the FieldWrapper component to wrap a custom input component.
+ */
 export type FieldWrapperPassThroughProps = Pick<
   FieldWrapperProps,
   "label" | "error"
 >;
 
+/**
+ * This component is used to wrap form fields with a label and error message.
+ * @param {FieldWrapperProps} { className, label, children, error }
+ * @returns {JSX.Element}
+ */
 export const FieldWrapper = ({
   className,
   label,

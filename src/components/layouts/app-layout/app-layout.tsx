@@ -1,3 +1,8 @@
+/**
+ * AppLayout component, layout for all app routes
+ * @param {React.ReactNode} children
+ * @returns{JSX.Element}
+ */
 export const AppLayout = ({children}: {children: React.ReactNode }) => {
     // const { components } = useBreadcrumb();
     return (

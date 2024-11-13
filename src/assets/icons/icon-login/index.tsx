@@ -5,6 +5,7 @@ import facebook from './facebook.svg?react';
 import buildings_duotone from './buildings-duotone.svg?react';
 import briefcase_duotone from './briefcase-duotone.svg?react';
 import briefcaseblue from './briefcaseblue.svg?react';
+import successful from "./successful.svg?react";
 
 export {
     fi_eye,
@@ -13,5 +14,6 @@ export {
     facebook,
     buildings_duotone,
     briefcase_duotone,
-    briefcaseblue
+    briefcaseblue,
+    successful
 }

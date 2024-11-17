@@ -6,8 +6,7 @@
 
 @layer base {
   body {
-    @apply font-jost;
-
+    @apply font-inter;
   }
 }
 

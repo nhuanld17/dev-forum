@@ -11,11 +11,17 @@ import { circleCheckmark
     , circleInfo
     , circleWarn
     , circleXmark
+    , briefcase_transparent
+    , facebook_gray
+    , instagram_gray
+    , twitter_gray
+    , youtube_gray
  } from "./icon-dashboard";
 
 import React from "react";
 
 export const icon = {
+    briefcase_transparent,
     briefcase_duotone,
     briefcaseblue,
     buildings_duotone,
@@ -27,7 +33,11 @@ export const icon = {
     circleInfo,
     circleWarn,
     circleXmark,
-    successful
+    successful,
+    facebook_gray,
+    instagram_gray,
+    twitter_gray,
+    youtube_gray,
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>
@@ -54,6 +64,3 @@ export const LocalIcon = ({
         />
     );
 };
-
-
-

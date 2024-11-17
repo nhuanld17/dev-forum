@@ -7,5 +7,23 @@ import facebook_gray from './facebook_gray.svg?react';
 import instagram_gray from './instagram_gray.svg?react';
 import twitter_gray from './twitter_gray.svg?react';
 import youtube_gray from './youtube_gray.svg?react';
+import phoneCall from './phone-call.svg?react';
+import flagImage from './flag-image.svg?react';
+import logoImage from './Logo.svg?react';
+import searchIcon from './icon-search.svg?react';
 
-export {circleCheckmark, circleInfo, circleWarn, circleXmark, briefcase_transparent, facebook_gray, instagram_gray, twitter_gray, youtube_gray};
+export {
+    circleCheckmark, 
+    circleInfo, 
+    circleWarn, 
+    circleXmark, 
+    briefcase_transparent, 
+    facebook_gray, 
+    instagram_gray, 
+    twitter_gray, 
+    youtube_gray,
+    phoneCall,
+    flagImage,
+    logoImage,
+    searchIcon
+};

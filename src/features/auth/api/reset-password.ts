@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { useOverlay } from "src/components/ui/overlay";
-import { useToast } from "src/components/ui/toast";
+import { useToast } from "src/components/ui";
 import { apiClient } from "src/lib/api-client";
 import { ResponseMessage } from "src/types/common";
 import { z } from "zod";

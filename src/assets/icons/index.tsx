@@ -54,6 +54,6 @@ export const LocalIcon = ({
         />
     );
 };
-LocalIcon({ iconName: "circleCheckmark", height: 36, width: 36 });
+
 
 

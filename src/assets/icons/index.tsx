@@ -16,6 +16,10 @@ import { circleCheckmark
     , instagram_gray
     , twitter_gray
     , youtube_gray
+    , phoneCall
+    , flagImage
+    , logoImage
+    , searchIcon
  } from "./icon-dashboard";
 
 import React from "react";
@@ -38,6 +42,10 @@ export const icon = {
     instagram_gray,
     twitter_gray,
     youtube_gray,
+    phoneCall,
+    flagImage,
+    logoImage,
+    searchIcon
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

@@ -7,7 +7,7 @@ export const CandidateHeader = () => {
     const menus = [
         {
             label: "Home",
-            path: `/candidate/`
+            path: `/candidate`
         },
         {
             label: "Find Employers",

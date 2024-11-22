@@ -42,9 +42,8 @@ export const NavListHorizontal: React.FC<NavListProps> = ({ items }: NavListProp
     const links = useMemo(() => {
         return items.map((item) => {
             const isActive = location.pathname === item.path
-                || (location.pathname.startsWith(item.path) &&
-                    ((item.path === "/candidate/profile" || item.path === "/employer/profile"))
-                    || (item.path === "/candidate/profile/settings" || item.path === "/employer/profile/settings"));
+                || location.pathname.startsWith(item.path) &&
+                    ((item.path === "/candidate/profile" || item.path === "/employer/profile"));
             return (
                 <li key={item.path} className="">
                     <Link

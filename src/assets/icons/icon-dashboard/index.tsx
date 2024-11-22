@@ -25,5 +25,5 @@ export {
     phoneCall,
     flagImage,
     logoImage,
-    searchIcon
+    searchIcon,
 };

@@ -27,20 +27,20 @@ export const AppHeaderDashBoard = () => {
                         ))}
                     </div>
                     <div className="header__contact flex items-center justify-between">
-                        <LocalIcon iconName="phoneCall" height={24} width={24}/>
+                        <LocalIcon iconName="phoneCall" height={24} width={24} />
                         <span className="text-black px-[10px] text-[14px]">+84 342043637</span>
-                        <LocalIcon iconName="flagImage" height={24} width={24}/>
+                        <LocalIcon iconName="flagImage" height={24} width={24} />
                     </div>
                 </div>
                 <div className="header-bottom py-[20px] px-[50px] border-b-[1px] border-b-[#dddddd] flex justify-between items-center">
                     <div className="Logo flex items-center">
-                        <LocalIcon iconName="logoImage" height={40} width={40}/>
+                        <LocalIcon iconName="logoImage" height={40} width={40} />
                         <Link className="ml-[10px] text-[24px] font-semibold text-[#18191C] hover:text-black" to={"/"}>MyJob</Link>
                     </div>
-                    <div className="search-bar flex w-[450px] py-[9px] px-[24px] border-[1px] border-[#E4E5E8] rounded-[5px]">
-                        <LocalIcon iconName="searchIcon" height={24} width={24}/>
+                    <div className="search-bar flex w-[450px] py-[9px] px-[24px] border-[1.75px] border-[#E4E5E8] rounded-[5px] focus-within:border-blue-500">
+                        <LocalIcon iconName="searchIcon" height={24} width={24} />
                         <form action="#" method="GET" className="ml-5 flex-1">
-                            <input type="text" name="key" placeholder="Job title, keyword, company" className="outline-none w-[100%]"/>
+                            <input type="text" name="key-word" placeholder="Job title, keyword, company" className="outline-none w-[100%]" />
                         </form>
                     </div>
                     <div className="button-group">
@@ -49,7 +49,6 @@ export const AppHeaderDashBoard = () => {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }

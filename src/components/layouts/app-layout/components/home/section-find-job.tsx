@@ -2,10 +2,10 @@ import { LocalIcon } from "src/assets/icons";
 import { LocalImage } from "src/assets/images";
 import { Button } from "src/components/ui";
 
-function SectionFindJob() {
+export const SectionFindJob = () =>{
 	return (
 		<>
-			<section className="section-find-job bg-[#E4E5E8] px-[50px] py-[70px]">
+			<section id="find-job" className="section-find-job bg-[#E4E5E8] px-[50px] py-[70px]">
 				<div className="body flex justify-between items-center">
 					<div className="content w-[50%]">
 						<div className="title pr-[30px] mb-[24px]">
@@ -70,5 +70,3 @@ function SectionFindJob() {
 		</>
 	)
 }
-
-export default SectionFindJob;

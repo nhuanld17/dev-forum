@@ -1,9 +1,9 @@
 import { LocalIcon } from "src/assets/icons";
 
-function SectionPopularCategory() {
+export const SectionPopularCategory = () => {
 	return (
 		<>
-			<div className="popular-cate px-[50px] py-[100px] bg-[#E4E5E8] flex flex-col">
+			<section id="polular-category" className="popular-cate px-[50px] py-[100px] bg-[#E4E5E8] flex flex-col">
 				<h1 className="title text-[40px] font-[500] leading-[48px] mb-[50px]">
 					Popular category
 				</h1>
@@ -81,9 +81,7 @@ function SectionPopularCategory() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</>
 	)
 }
-
-export default SectionPopularCategory;

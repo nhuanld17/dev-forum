@@ -1,6 +1,6 @@
-const SectionPopularVacancy = () => {
+export const SectionPopularVacancy = () => {
     return (
-        <div className="popular-vacancy px-[50px] py-[100px] flex flex-col justify-between">
+        <section id="popular-vacancy" className="popular-vacancy px-[50px] py-[100px] flex flex-col justify-between">
             <h1 className="title text-[40px] font-[500] leading-[48px] mb-[40px]">
                 Most Popular Vacancies
             </h1>
@@ -100,8 +100,6 @@ const SectionPopularVacancy = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
-
-export default SectionPopularVacancy;

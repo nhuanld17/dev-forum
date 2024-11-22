@@ -1,10 +1,10 @@
 import { LocalIcon } from "src/assets/icons";
 import { Button } from "src/components/ui";
 
-function SectionRegister() {
+export const SectionRegister = () => {
   return (
     <>
-      <div className="register px-[50px] py-[100px] flex justify-between">
+      <section id="register" className="register px-[50px] py-[100px] flex justify-between">
         <div className="card bg-[#E4E5E8] w-[600px]  p-[50px] gap-[26px] rounded-[12px]">
           <h1 className="title text-[32px] font-[500] leading-[40px] mb-[16px]">
             Become a Candidate
@@ -29,9 +29,7 @@ function SectionRegister() {
             <LocalIcon iconName="iconArrowRight" />
           </Button>
         </div>
-      </div>
+      </section>
     </>
   )
 }
-
-export default SectionRegister;

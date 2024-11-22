@@ -31,7 +31,7 @@ const BoxLink = ({ title, props }: { title: String, props: BoxLinkProps[] }) => 
 export const AppFooterDashBoard = () => {
 
     return (
-        <div className="bg-[#18191C]">
+        <footer id="about-us" className="bg-[#18191C]">
             <div className="flex py-[80px] px-[50px] justify-between">
                 <div className="flex flex-col gap-[24px] text-white">
                     <div className="flex gap-[8px] items-center">
@@ -81,6 +81,6 @@ export const AppFooterDashBoard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }

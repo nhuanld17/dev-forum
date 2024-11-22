@@ -1,7 +1,20 @@
-import { login_banner } from "./images-dashboard";
+import { 
+    login_banner,
+    coder_image,
+    static_icon_1,
+    static_icon_2,
+    static_icon_3,
+    static_icon_4,
+} from "./images-dashboard";
 
 const image = {
     login_banner,
+    coder_image,
+    static_icon_1,
+    static_icon_2,
+    static_icon_3,
+    static_icon_4,
+    
 } satisfies Record<string, string>;
 
 export type LocalImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {

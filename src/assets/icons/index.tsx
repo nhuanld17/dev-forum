@@ -1,13 +1,15 @@
-import { briefcase_duotone,
-        briefcaseblue,
-        buildings_duotone,
-        facebook,
-        fi_arrow_right,
-        fi_eye,
-        google,
-        successful
-    } from "./icon-login";
-import { circleCheckmark
+import {
+    briefcase_duotone,
+    briefcaseblue,
+    buildings_duotone,
+    facebook,
+    fi_arrow_right,
+    fi_eye,
+    google,
+    successful
+} from "./icon-login";
+import {
+    circleCheckmark
     , circleInfo
     , circleWarn
     , circleXmark
@@ -20,7 +22,21 @@ import { circleCheckmark
     , flagImage
     , logoImage
     , searchIcon
- } from "./icon-dashboard";
+    , iconMap
+    , iconPen
+    , iconCode
+    , iconMarketing
+    , iconVideo
+    , iconMusic
+    , iconFinance
+    , iconHealthy
+    , iconData
+    , iconArrowRight
+    , iconUpWork
+    , iconSlack
+    , iconFreePik
+    , iconFaceBook
+} from "./icon-dashboard";
 
 import React from "react";
 
@@ -45,7 +61,21 @@ export const icon = {
     phoneCall,
     flagImage,
     logoImage,
-    searchIcon
+    searchIcon,
+    iconMap,
+    iconPen,
+    iconCode,
+    iconMarketing,
+    iconVideo,
+    iconMusic,
+    iconFinance,
+    iconHealthy,
+    iconData,
+    iconArrowRight,
+    iconUpWork,
+    iconSlack,
+    iconFreePik,
+    iconFaceBook
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

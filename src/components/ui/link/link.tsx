@@ -3,7 +3,7 @@ import { Link as RouterLink
     , LinkProps as RouterLinkProps
  } from "react-router-dom";
 
-const linkVariants = cva("inline-flex hover: opacity-70");
+const linkVariants = cva("inline-flex hover:opacity-70");
 
 /**
  * Link component props.

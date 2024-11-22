@@ -1,21 +1,47 @@
-import { briefcase_duotone,
-        briefcaseblue,
-        buildings_duotone,
-        facebook,
-        fi_arrow_right,
-        fi_eye,
-        google,
-        successful
-    } from "./icon-login";
-import { circleCheckmark
+import {
+    briefcase_duotone,
+    briefcaseblue,
+    buildings_duotone,
+    facebook,
+    fi_arrow_right,
+    fi_eye,
+    google,
+    successful
+} from "./icon-login";
+import {
+    circleCheckmark
     , circleInfo
     , circleWarn
     , circleXmark
- } from "./icon-dashboard";
+    , briefcase_transparent
+    , facebook_gray
+    , instagram_gray
+    , twitter_gray
+    , youtube_gray
+    , phoneCall
+    , flagImage
+    , logoImage
+    , searchIcon
+    , iconMap
+    , iconPen
+    , iconCode
+    , iconMarketing
+    , iconVideo
+    , iconMusic
+    , iconFinance
+    , iconHealthy
+    , iconData
+    , iconArrowRight
+    , iconUpWork
+    , iconSlack
+    , iconFreePik
+    , iconFaceBook
+} from "./icon-dashboard";
 
 import React from "react";
 
 export const icon = {
+    briefcase_transparent,
     briefcase_duotone,
     briefcaseblue,
     buildings_duotone,
@@ -27,7 +53,29 @@ export const icon = {
     circleInfo,
     circleWarn,
     circleXmark,
-    successful
+    successful,
+    facebook_gray,
+    instagram_gray,
+    twitter_gray,
+    youtube_gray,
+    phoneCall,
+    flagImage,
+    logoImage,
+    searchIcon,
+    iconMap,
+    iconPen,
+    iconCode,
+    iconMarketing,
+    iconVideo,
+    iconMusic,
+    iconFinance,
+    iconHealthy,
+    iconData,
+    iconArrowRight,
+    iconUpWork,
+    iconSlack,
+    iconFreePik,
+    iconFaceBook
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>
@@ -54,6 +102,3 @@ export const LocalIcon = ({
         />
     );
 };
-LocalIcon({ iconName: "circleCheckmark", height: 36, width: 36 });
-
-

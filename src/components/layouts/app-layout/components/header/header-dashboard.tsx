@@ -47,8 +47,8 @@ export const AppHeaderDashBoard = () => {
                         </form>
                     </div>
                     <div className="button-group">
-                        <Button variant="ghost" size="md" className="mr-[10px]">Sign In</Button>
-                        <Button variant="filled" size="md">Post A Job</Button>
+                        <Button variant="ghost" size="md" className="mr-[10px]" >Sign In</Button>
+                        <Button variant="filled" size="md" >Post A Job</Button>
                     </div>
                 </div>
             </header>

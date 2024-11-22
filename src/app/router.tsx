@@ -38,7 +38,7 @@ export const createRouter = () =>
           },
           {
             //candidate
-            path: "/candidate",
+            path: "candidate",
             lazy: async () => {
               const { CandidateRoot } = await import("src/app/routes/app/root-candidate");
               return { Component: CandidateRoot };
@@ -46,68 +46,146 @@ export const createRouter = () =>
             children: [
               {
                 //profile
-                path: "/candidate/profile",
+                path: "profile",
                 lazy: async () => {
                   const { ProfileRoute } = await import("src/app/routes/app/private/candidate/profile");
-                  return {Component: ProfileRoute}
+                  return { Component: ProfileRoute }
                 },
-                children:[
+                children: [
                   {
-                    path: "/candidate/profile",
+                    path: "",
                     lazy: async () => {
                       const { OverviewRoute } = await import("src/app/routes/app/private/candidate/overview");
-                      return {Component: OverviewRoute}
+                      return { Component: OverviewRoute }
                     },
                   },
                   {
-                    path: "/candidate/profile/applied-jobs",
+                    path: "applied-jobs",
                     lazy: async () => {
                       const { ApplyJobRoute } = await import("src/app/routes/app/private/candidate/apply-job");
-                      return {Component: ApplyJobRoute}
+                      return { Component: ApplyJobRoute }
                     },
                   },
                   {
-                    path: "/candidate/profile/favorite-jobs",
+                    path: "favorite-jobs",
                     lazy: async () => {
                       const { FavoriteJobRoute } = await import("src/app/routes/app/private/candidate/favorite-job");
-                      return {Component: FavoriteJobRoute}
+                      return { Component: FavoriteJobRoute }
                     },
                   },
                   {
                     //settings
-                    path: "/candidate/profile/settings",
+                    path: "settings",
                     lazy: async () => {
                       const { SettingRoute } = await import("src/app/routes/app/private/candidate/setting");
-                      return {Component: SettingRoute}
+                      return { Component: SettingRoute }
                     },
-                    children:[
+                    children: [
                       {
-                        path: "/candidate/profile/settings",
+                        path: "",
                         lazy: async () => {
                           const { PersonalRoute } = await import("src/app/routes/app/private/candidate/personal");
-                          return {Component: PersonalRoute}
+                          return { Component: PersonalRoute }
                         },
                       },
                       {
-                        path: "/candidate/profile/settings/profile",
+                        path: "profile",
                         lazy: async () => {
                           const { ProfileSettingRoute } = await import("src/app/routes/app/private/candidate/profile-setting");
-                          return {Component: ProfileSettingRoute}
+                          return { Component: ProfileSettingRoute }
                         },
                       },
                       {
-                        path: "/candidate/profile/settings/social-links",
+                        path: "social-links",
                         lazy: async () => {
                           const { SocialLinkRoute } = await import("src/app/routes/app/private/candidate/social-link");
-                          return {Component: SocialLinkRoute}
+                          return { Component: SocialLinkRoute }
                         },
                       },
                       {
-                        path: "/candidate/profile/settings/account-setting",
+                        path: "account-setting",
                         lazy: async () => {
                           const { AccountSettingRoute } = await import("src/app/routes/app/private/candidate/account-setting");
-                          return {Component: AccountSettingRoute}
+                          return { Component: AccountSettingRoute }
                         },
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            //employer
+            path: "employer",
+            lazy: async () => {
+              const { EmployerRoot } = await import("src/app/routes/app/root-employer");
+              return { Component: EmployerRoot };
+            },
+            children: [
+              {
+                //profile
+                path: "profile",
+                lazy: async () => {
+                  const { ProfileRoute } = await import("src/app/routes/app/private/employer/profile");
+                  return { Component: ProfileRoute }
+                },
+                children: [
+                  {
+                    path: "",
+                    lazy: async () => {
+                      const { OverviewRoute } = await import("src/app/routes/app/private/employer/overview");
+                      return { Component: OverviewRoute }
+                    },
+                  },
+                  {
+                    path: "posted-jobs",
+                    lazy: async () => {
+                      const { PostedJobRoute } = await import("src/app/routes/app/private/employer/posted-job");
+                      return { Component: PostedJobRoute }
+                    },
+                  },
+                  {
+                    path: "my-jobs",
+                    lazy: async () => {
+                      const { MyJobRoute } = await import("src/app/routes/app/private/employer/my-job");
+                      return { Component: MyJobRoute }
+                    },
+                  },
+                  {
+                    path: "settings",
+                    lazy: async () => {
+                      const { SettingRoute } = await import("src/app/routes/app/private/employer/setting");
+                      return { Component: SettingRoute }
+                    },
+                    children: [
+                      {
+                        path: "",
+                        lazy: async () => {
+                          const { CompanyInfoRoute } = await import("src/app/routes/app/private/employer/company-info");
+                          return { Component: CompanyInfoRoute }
+                        },
+                      },
+                      {
+                        path: "founding-info",
+                        lazy: async () => {
+                          const { FoundingInfoRoute } = await import("src/app/routes/app/private/employer/founding-info");
+                          return { Component: FoundingInfoRoute }
+                        },
+                      },
+                      {
+                        path: "social-links",
+                        lazy: async () => {
+                          const { SocialLinkRoute } = await import("src/app/routes/app/private/employer/social-link");
+                          return { Component: SocialLinkRoute }
+                        },
+                      },
+                      {
+                        path: "account-setting",
+                        lazy: async () => {
+                          const { ProfileSettingRoute } = await import("src/app/routes/app/private/employer/profile-setting");
+                          return { Component: ProfileSettingRoute }
+                        }
                       }
                     ]
                   }
@@ -172,13 +250,4 @@ export const createRouter = () =>
         ],
       },
     ],
-    {
-      future: {
-        v7_skipActionErrorRevalidation: true,
-        v7_partialHydration: true,
-        v7_relativeSplatPath: true,
-        v7_fetcherPersist: true,
-        v7_normalizeFormMethod: true,
-      },
-    }
   );

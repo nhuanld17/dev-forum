@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "../link";
 import { LocalIcon } from "src/assets/icons";
 
-const navListVariants = cva("flex items-center gap-4 pt-2 pb-2 px-5", {
+const navListVariants = cva("flex items-center gap-4 pt-2 pb-2 px-5 hover:scale-95", {
     variants: {
         variant: {
             active: "text-[#0A65CC] font-[500] border-b-[3px] border-[#0A65CC]",

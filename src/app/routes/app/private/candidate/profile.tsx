@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { ProfileLayout } from "src/components/layouts";
+import { CandidateProfileLayout } from "src/components/layouts";
 
 export const ProfileRoute = () => {
     return (
-        <ProfileLayout>
+        <CandidateProfileLayout>
             <Outlet/>
-        </ProfileLayout>
+        </CandidateProfileLayout>
     )
 };

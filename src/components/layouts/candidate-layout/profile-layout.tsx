@@ -1,6 +1,6 @@
 import { CandidateNav } from "./components";
 
-export const ProfileLayout = ({children} : {children: React.ReactNode}) => {
+export const CandidateProfileLayout = ({children} : {children: React.ReactNode}) => {
     return (
         <div className="flex min-h-screen px-[50px]">
             <CandidateNav/>

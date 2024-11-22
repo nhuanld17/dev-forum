@@ -5,25 +5,28 @@ import { Button } from "src/components/ui";
 export const AppHeaderDashBoard = () => {
 
     const menus = [
-        "Home",
-        "Find Job",
-        "Employers",
-        "Candidates",
-        "Pricing Plans",
-        "Customer Support"
+        {label: "Home", path:"/"},
+        {label: "Find Job", path:"#find-job"},
+        {label: "Category", path:"#polular-category"},
+        {label: "Vacancy", path:"#popular-vacancy"},
+        {label: "Top Company", path:"#top-company"},
+        {label: "About Us", path:"#about-us"}
+
     ];
 
-    return (
+    return (    
         <>
-            <div className="header">
+            <header id="header" className="fixed top-0 left-0 w-full z-[1000]   " >
                 <div className="header-top px-[50px] flex h-[48px] bg-[#F1F2F4] items-center justify-between">
                     <div className="header__menu flex justify-between">
                         {menus.map((menuItem, menuIndex) => (
-                            <Link className="text-[14px] text-[#5E6670] mx-[24px] h-[48px] items-center last:mr-0 first:ml-0 first:text-[#0A65CC] hover:border-b-[3px] hover:border-[#0A65CC] hover:text-[#0A65CC]" 
-                            to={"/auth/"} 
-                            key={menuIndex}>
-                                {menuItem}
-                            </Link>
+                            <a
+                            className="inline-flex hover:opacity-70 text-[14px] text-[#5E6670] mx-[24px] h-[48px] items-center last:mr-0 first:ml-0 first:text-[#0A65CC] hover:border-b-[3px] hover:border-[#0A65CC] hover:text-[#0A65CC]"
+                            href={menuItem.path}
+                            key={menuIndex}
+                        >
+                            {menuItem.label}
+                        </a>
                         ))}
                     </div>
                     <div className="header__contact flex items-center justify-between">
@@ -32,7 +35,7 @@ export const AppHeaderDashBoard = () => {
                         <LocalIcon iconName="flagImage" height={24} width={24} />
                     </div>
                 </div>
-                <div className="header-bottom py-[20px] px-[50px] border-b-[1px] border-b-[#dddddd] flex justify-between items-center">
+                <div className="header-bottom py-[20px] px-[50px] border-b-[1px] bg-white border-b-[#dddddd] flex justify-between items-center">
                     <div className="Logo flex items-center">
                         <LocalIcon iconName="logoImage" height={40} width={40} />
                         <Link className="ml-[10px] text-[24px] font-semibold text-[#18191C] hover:text-black" to={"/"}>MyJob</Link>
@@ -48,7 +51,7 @@ export const AppHeaderDashBoard = () => {
                         <Button variant="filled" size="md">Post A Job</Button>
                     </div>
                 </div>
-            </div>
+            </header>
         </>
     );
 }

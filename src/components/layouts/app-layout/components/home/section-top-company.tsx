@@ -1,10 +1,10 @@
 import { LocalIcon } from "src/assets/icons";
 import { Button } from "src/components/ui";
 
-function SectionTopCompanies () {
+export const SectionTopCompanies = () => {
   return (
     <>
-      <div className="top-company px-[50px] py-[100px] border-b-[1px] border-b-[#ddd]">
+      <section id="top-company" className="top-company px-[50px] py-[100px] border-b-[1px] border-b-[#ddd]">
         <h1 className="text-[40px] font-[500] leading-[48px] mb-[50px]">Top companies</h1>
 
         <div className="list-company flex flex-wrap justify-between items-center">
@@ -131,9 +131,7 @@ function SectionTopCompanies () {
             </Button>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }
-
-export default SectionTopCompanies;

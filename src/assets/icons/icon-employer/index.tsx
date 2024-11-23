@@ -7,6 +7,8 @@ import envelope from './envelope.svg?react';
 import facebook_link from './facebook_link.svg?react';
 import twitter_link from './twitter_link.svg?react';
 import linkedin_link from './linkedin_link.svg?react';
+import arrow_right_white from './arrow_right_white.svg?react';
+import exit from './exit.svg?react';
 
 export {
     envelope_white,
@@ -17,5 +19,7 @@ export {
     envelope,
     facebook_link,
     twitter_link,
-    linkedin_link
+    linkedin_link,
+    arrow_right_white,
+    exit
 }

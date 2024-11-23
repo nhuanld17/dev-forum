@@ -1,4 +1,5 @@
 import { Button, useOverlay } from "src/components/ui";
+import { ApplyJobOverlay } from "src/components/ui/overlay/components/candidate-overlay";
 import { OverlayCandidateProfile } from "src/components/ui/overlay/components/company-overlay";
 
 
@@ -19,8 +20,13 @@ export const FindCandidateRoute = () => {
         mail: "nguyenvana@example.com"
     };
     return (
-        <div>
-           <Button onClick={() => display(<OverlayCandidateProfile props={DataTemplate}/>)}>Dismiss</Button>
-        </div>
+        <>
+            <div>
+                <Button onClick={() => display(<OverlayCandidateProfile props={DataTemplate} />)}>Dismiss</Button>
+            </div>
+            <div>
+                <Button onClick={() => display(<ApplyJobOverlay/>)}>Dismiss</Button>
+            </div>
+        </>
     );
 }

@@ -63,7 +63,9 @@ import { envelope_white,
     envelope,
     facebook_link,
     twitter_link,
-    linkedin_link
+    linkedin_link,
+    arrow_right_white,
+    exit
  } from "./icon-employer"; 
 
 import React from "react";
@@ -127,7 +129,9 @@ export const icon = {
     envelope,
     facebook_link,
     twitter_link,
-    linkedin_link
+    linkedin_link,
+    arrow_right_white,
+    exit
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

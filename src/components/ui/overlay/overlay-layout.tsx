@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-const overlayVariants = cva("fixed inset-0 z-50 bg-gray-500/20 backdrop-blur");
+const overlayVariants = cva("fixed inset-0 z-50");
 
 export type OverlayProps = {
     className?: string;
@@ -8,7 +8,7 @@ export type OverlayProps = {
     children: React.ReactNode;
 };
 export const OverlayLayout = ({
-    className = "flex items-center justify-center",
+    className = "flex items-center bg-gray-500/40 justify-center",
     onDismiss,
     children,
 }: OverlayProps) => {
@@ -17,7 +17,8 @@ export const OverlayLayout = ({
             className={overlayVariants({ className })}
             onClick={onDismiss}
         >
-            <div onClick={(e) => {
+            <div
+             onClick={(e) => {
                 e.stopPropagation();
             }}
             >

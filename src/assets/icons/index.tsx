@@ -55,6 +55,17 @@ import { bell_ringing,
     usercircle_gray
  } from "./icon-candidate";
 
+import { envelope_white,
+    cake,
+    graduation_cap,
+    location,
+    phone,
+    envelope,
+    facebook_link,
+    twitter_link,
+    linkedin_link
+ } from "./icon-employer"; 
+
 import React from "react";
 
 export const icon = {
@@ -107,7 +118,16 @@ export const icon = {
     iconUpWork,
     iconSlack,
     iconFreePik,
-    iconFaceBook
+    iconFaceBook,
+    envelope_white,
+    cake,
+    graduation_cap,
+    location,
+    phone,
+    envelope,
+    facebook_link,
+    twitter_link,
+    linkedin_link
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

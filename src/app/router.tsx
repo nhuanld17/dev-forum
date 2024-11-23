@@ -124,6 +124,13 @@ export const createRouter = () =>
             },
             children: [
               {
+                path: "",
+                lazy: async () => {
+                  const { FindCandidateRoute } = await import("src/app/routes/app/private/employer/find-candidate");
+                  return { Component: FindCandidateRoute };
+                }
+              },
+              {
                 //profile
                 path: "profile",
                 lazy: async () => {

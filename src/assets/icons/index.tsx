@@ -69,7 +69,9 @@ import { envelope_white,
     twitter_link,
     linkedin_link,
     arrow_right_white,
-    exit
+    exit,
+    file_text,
+    download
  } from "./icon-employer"; 
 
 import React from "react";
@@ -136,6 +138,8 @@ export const icon = {
     linkedin_link,
     arrow_right_white,
     exit,
+    file_text,
+    download,
     link,
     calendar,
     time,

@@ -3,7 +3,8 @@ export type CandidateInfo = {
     id: number;
     fullName: string;
     title: string;
-    resumeLink: string;
+    portfolio: string;
+    resumeLink: File | string;
     birthDate: string;
     gender: boolean;
     education: string;

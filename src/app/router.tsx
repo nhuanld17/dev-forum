@@ -32,8 +32,8 @@ export const createRouter = () =>
                 lazy: async () => {
                   const { HomeRoute } = await import("src/app/routes/app/public/home");
                   return { Component: HomeRoute };
-                }
-              }
+                },
+              },
             ]
           },
           {
@@ -44,6 +44,34 @@ export const createRouter = () =>
               return { Component: CandidateRoot };
             },
             children: [
+              {
+                path: "",
+                lazy: async () => {
+                  const { FindJobRoute } = await import("src/app/routes/app/private/candidate/find-job");
+                  return { Component: FindJobRoute };
+                }
+              },
+              {
+                path: "job-details",
+                lazy: async () => {
+                  const { JobdetailRoute } = await import("src/app/routes/app/private/candidate/job-details");
+                  return { Component: JobdetailRoute };
+                },
+              },
+              {
+                path: "employers",
+                lazy: async () => {
+                  const { FindCompanyRoute } = await import("src/app/routes/app/private/candidate/find-employer");
+                  return { Component: FindCompanyRoute };
+                },
+              },
+              {
+                path: "employers/details",
+                lazy: async () => {
+                  const { CompanyDetailsRoute } = await import("src/app/routes/app/private/candidate/employer-details");
+                  return { Component: CompanyDetailsRoute };
+                },
+              },
               {
                 //profile
                 path: "profile",

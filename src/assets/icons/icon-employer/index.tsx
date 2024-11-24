@@ -9,6 +9,8 @@ import twitter_link from './twitter_link.svg?react';
 import linkedin_link from './linkedin_link.svg?react';
 import arrow_right_white from './arrow_right_white.svg?react';
 import exit from './exit.svg?react';
+import file_text from './file_text.svg?react';
+import download from './download.svg?react';
 
 export {
     envelope_white,
@@ -21,5 +23,7 @@ export {
     twitter_link,
     linkedin_link,
     arrow_right_white,
-    exit
+    exit,
+    file_text,
+    download
 }

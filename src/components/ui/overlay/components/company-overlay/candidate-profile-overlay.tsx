@@ -22,7 +22,7 @@ const BoxInfo = ({ image, title, value, className }: BoxInfoProps) => {
             <LocalIcon iconName={image} height={24} width={24} />
             <div className="flex flex-col">
                 <span className="text-[12px] text-[#767F8C] leading-6">{title}</span>
-                <span className="text-[14px] font-[500] leading-6">{value}</span>
+                <span className="text-[14px] font-[500] leading-6 max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap">{value}</span>
             </div>
         </div>
     );
@@ -90,8 +90,31 @@ export const OverlayCandidateProfile = (
                                 </div>
                             </div>
                             <div className="main-right-bottom flex flex-col p-6 border-2 rounded-lg gap-6">
+                                <span>Download My Resume</span>
+                                <div className="flex justify-between">
+                                    <div className="flex fap-3">
+                                        <LocalIcon iconName="file_text" height={48} width={48} />
+                                        <div className="flex flex-col">
+                                            <span className="text-[12px] text-[#767F8C]">{props.fullName}</span>
+                                            <span>PDF</span>
+                                        </div>
+                                    </div>
+                                    <Button variant={"ghost"}>
+                                        <a
+                                            href={props.resumeLink instanceof File ? URL.createObjectURL(props.resumeLink) : props.resumeLink}
+                                            download={props.resumeLink instanceof File ? props.resumeLink.name : undefined}
+                                            className="flex items-center gap-2"
+                                        >
+                                            <LocalIcon iconName="download" height={24} width={24} />
+                                        </a>
+                                    </Button>
+
+
+                                </div>
+                            </div>
+                            <div className="main-right-bottom flex flex-col p-6 border-2 rounded-lg gap-6">
                                 <span>Contact Information</span>
-                                <BoxInfo image={"global_blue"} title={"MY RESUME"} value={props.resumeLink} className="flex-row items-center" />
+                                <BoxInfo image={"global_blue"} title={"MY WEBSITE"} value={props.portfolio} className="flex-row items-center" />
                                 <BoxInfo image={"location"} title={"LOCATION"} value={props.location} className="flex-row items-center" />
                                 <BoxInfo image={"phone"} title={"PHONE"} value={props.phoneNumber} className="flex-row items-center" />
                                 <BoxInfo image={"envelope"} title={"EMAIL ADRESS"} value={props.mail} className="flex-row items-center" />

@@ -5,6 +5,7 @@ import {
     static_icon_2,
     static_icon_3,
     static_icon_4,
+    banner
 } from "./images-dashboard";
 
 const image = {
@@ -14,7 +15,7 @@ const image = {
     static_icon_2,
     static_icon_3,
     static_icon_4,
-    
+    banner
 } satisfies Record<string, string>;
 
 export type LocalImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {

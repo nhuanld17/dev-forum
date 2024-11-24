@@ -13,6 +13,10 @@ import user_gray from './user_gray.svg?react';
 import user_blue from './user_blue.svg?react';
 import usercircle_gray from './usercircle_gray.svg?react';
 import usercircle_blue from './usercircle_blue.svg?react';
+import link from './link.svg?react';
+import calendar from './CalendarBlank.svg?react';
+import time from './Timer.svg?react';
+import wallet from './Wallet.svg?react';
 
 export {
     bell_ringing,
@@ -30,4 +34,8 @@ export {
     user_blue,
     usercircle_gray,
     usercircle_blue,
+    link,
+    calendar,
+    time,
+    wallet
 }

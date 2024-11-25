@@ -17,7 +17,7 @@ export const registerInputSchema = z.object({
 });
 
 const postRegisterData = (data: z.infer<typeof registerInputSchema>) => {
-  return apiClient.post("/auth/register-candidate", data);
+  return apiClient.post("/auth/register", data);
 };
 
 export const useRegister = (alert: React.ReactNode) => {

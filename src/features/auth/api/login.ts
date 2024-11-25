@@ -3,7 +3,7 @@ import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "src/components/ui/toast";
 import { apiClient } from "src/lib/api-client";
-import { ResponseMessage } from "src/types/common";
+import { ResponseMessage, ResponseUser } from "src/types/common";
 import { z } from "zod";
 
 export const loginInputSchema = z.object({
@@ -12,7 +12,6 @@ export const loginInputSchema = z.object({
 });
 
 const postLoginData = (data: z.infer<typeof loginInputSchema>) => {
-  console.log(data);
   return apiClient.post("/auth/login", data);
 };
 
@@ -22,13 +21,18 @@ export const useLogin = () => {
 
   return useMutation({
     mutationFn: postLoginData,
-    onSuccess: () => {
+    onSuccess: (data) => {
+      const role = data.data.data as ResponseUser;
       addToast({
         title: "Login success",
         message: "You have been logged in",
         type: "success",
       });
-      navigate("/profile");
+      if (role.userLogin.roleName === "ROLE_COMPANY") {
+        navigate("/employer");
+      } else {
+        navigate("/candidate");
+      }
     },
     onError: (error: AxiosError) => {
       const data = error.response?.data as ResponseMessage;

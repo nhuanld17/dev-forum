@@ -11,7 +11,7 @@ export const registerInputSchema = z.object({
   fullName: z.string().min(1, "Required"),
   email: z.string().min(1, "Required").email("Invalid email"),
   password: z.string().min(6, "Required"),
-  role: z.enum(["candidate", "employer"]).refine((value) => value !== undefined, {
+  role: z.enum(["ROLE_COMPANY", "ROLE_CANDIDATE"]).refine((value) => value !== undefined, {
     message: "Role is required",
   }),
 });

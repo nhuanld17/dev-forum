@@ -22,13 +22,15 @@ export const useLogin = () => {
   return useMutation({
     mutationFn: postLoginData,
     onSuccess: (data) => {
-      const role = data.data.data as ResponseUser;
+      const item = data.data.data as ResponseUser;
       addToast({
         title: "Login success",
         message: "You have been logged in",
         type: "success",
       });
-      if (role.userLogin.roleName === "ROLE_COMPANY") {
+      localStorage.setItem("token", item.access_token);
+      localStorage.setItem("roleName", item.userLogin.roleName);
+      if (item.userLogin.roleName === "ROLE_COMPANY") {
         navigate("/employer");
       } else {
         navigate("/candidate");

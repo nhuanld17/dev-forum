@@ -13,8 +13,8 @@ const checkAuth = () => {
     window.location.href = "/auth";
   }
   const isValidAccess = 
-    (isRole === "candidate" && path.includes("candidate")) ||
-    (isRole === "employer" && path.includes("employer"));
+    (isRole === "ROLE_CANDIDATE" && path.includes("candidate")) ||
+    (isRole === "ROLE_COMPANY" && path.includes("employer"));
 
   if (!isValidAccess) {
     window.location.href = "/auth";

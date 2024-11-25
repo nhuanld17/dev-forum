@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-
+import { checkAuth, autoLogin } from "./routes/auth/check-auth";
 /**
  * create router component
  * with createBrowserRouter from react-router-dom and with nested components
@@ -22,6 +22,7 @@ export const createRouter = () =>
           //dashboard
           {
             path: "",
+            loader: autoLogin,
             lazy: async () => {
               const { AppRoot } = await import("src/app/routes/app/root");
               return { Component: AppRoot };
@@ -39,6 +40,7 @@ export const createRouter = () =>
           {
             //candidate
             path: "candidate",
+            loader: checkAuth,
             lazy: async () => {
               const { CandidateRoot } = await import("src/app/routes/app/root-candidate");
               return { Component: CandidateRoot };
@@ -146,6 +148,7 @@ export const createRouter = () =>
           {
             //employer
             path: "employer",
+            loader: checkAuth,
             lazy: async () => {
               const { EmployerRoot } = await import("src/app/routes/app/root-employer");
               return { Component: EmployerRoot };

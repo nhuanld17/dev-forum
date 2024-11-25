@@ -1,9 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
-import { useNavigate } from "react-router-dom";
 import { useToast } from "src/components/ui/toast";
 import { apiClient } from "src/lib/api-client";
-import { ResponseMessage } from "src/types/common";
+import { ResponseMessage, ResponseUser } from "src/types/common";
 import { z } from "zod";
 
 export const loginInputSchema = z.object({
@@ -12,23 +11,27 @@ export const loginInputSchema = z.object({
 });
 
 const postLoginData = (data: z.infer<typeof loginInputSchema>) => {
-  console.log(data);
   return apiClient.post("/auth/login", data);
 };
 
 export const useLogin = () => {
-  const navigate = useNavigate();
   const { addToast } = useToast();
 
   return useMutation({
     mutationFn: postLoginData,
-    onSuccess: () => {
+    onSuccess: async (data) => {
+      const item = data.data.data as ResponseUser;
+      await Promise.all([
+        localStorage.setItem("token", item.access_token),
+        localStorage.setItem("roleName", item.userLogin.roleName),
+      ]);
+      const rolePath = item.userLogin.roleName === "ROLE_COMPANY" ? "/employer" : "/candidate";
+      window.location.href = rolePath;
       addToast({
         title: "Login success",
         message: "You have been logged in",
         type: "success",
       });
-      navigate("/profile");
     },
     onError: (error: AxiosError) => {
       const data = error.response?.data as ResponseMessage;

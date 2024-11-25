@@ -8,8 +8,7 @@ import { ResponseMessage } from "src/types/common";
 import { z } from "zod";
 
 export const registerInputSchema = z.object({
-  firstName: z.string().min(1, "Required"),
-  lastName: z.string().min(1, "Required"),
+  fullName: z.string().min(1, "Required"),
   email: z.string().min(1, "Required").email("Invalid email"),
   password: z.string().min(6, "Required"),
   role: z.enum(["candidate", "employer"]).refine((value) => value !== undefined, {
@@ -18,7 +17,7 @@ export const registerInputSchema = z.object({
 });
 
 const postRegisterData = (data: z.infer<typeof registerInputSchema>) => {
-  return apiClient.post("/auth/register", data);
+  return apiClient.post("/auth/register-candidate", data);
 };
 
 export const useRegister = (alert: React.ReactNode) => {

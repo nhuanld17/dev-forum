@@ -12,6 +12,7 @@ export const loginInputSchema = z.object({
 });
 
 const postLoginData = (data: z.infer<typeof loginInputSchema>) => {
+  console.log(data);
   return apiClient.post("/auth/login", data);
 };
 

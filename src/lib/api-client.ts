@@ -10,7 +10,7 @@ apiClient.interceptors.response.use(
     (error: AxiosError) => {
         //navigate to login page if 401 error
         if (error.response?.status === 401) {
-            window.location.href = "/login";
+            window.location.href = "/auth";
         }
         return Promise.reject(error);
     }

@@ -1,26 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import { checkAuth, autoLogin } from "./routes/auth/check-auth";
 /**
  * create router component
  * with createBrowserRouter from react-router-dom and with nested components
  * @returns {RouterComponent}
  */
-const checkAuth = () => {
-  const token = localStorage.getItem("token");
-  const isRole = localStorage.getItem("roleName");
-  const path = window.location.pathname;
-
-  if (!token || !isRole) {
-    window.location.href = "/auth";
-  }
-  const isValidAccess = 
-    (isRole === "ROLE_CANDIDATE" && path.includes("candidate")) ||
-    (isRole === "ROLE_COMPANY" && path.includes("employer"));
-
-  if (!isValidAccess) {
-    window.location.href = "/auth";
-  }
-  return {};
-};
 export const createRouter = () =>
   createBrowserRouter(
     [
@@ -38,6 +22,7 @@ export const createRouter = () =>
           //dashboard
           {
             path: "",
+            loader: autoLogin,
             lazy: async () => {
               const { AppRoot } = await import("src/app/routes/app/root");
               return { Component: AppRoot };

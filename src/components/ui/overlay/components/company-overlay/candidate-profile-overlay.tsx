@@ -108,8 +108,6 @@ export const OverlayCandidateProfile = (
                                             <LocalIcon iconName="download" height={24} width={24} />
                                         </a>
                                     </Button>
-
-
                                 </div>
                             </div>
                             <div className="main-right-bottom flex flex-col p-6 border-2 rounded-lg gap-6">

@@ -12,6 +12,9 @@ export const registerInputSchema = z.object({
   lastName: z.string().min(1, "Required"),
   email: z.string().min(1, "Required").email("Invalid email"),
   password: z.string().min(6, "Required"),
+  role: z.enum(["candidate", "employer"]).refine((value) => value !== undefined, {
+    message: "Role is required",
+  }),
 });
 
 const postRegisterData = (data: z.infer<typeof registerInputSchema>) => {

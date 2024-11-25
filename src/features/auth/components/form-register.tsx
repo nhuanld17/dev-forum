@@ -22,6 +22,24 @@ export const RegisterForm = () => {
         >
             {({ register, formState }) => (
                 <>
+                    {/* Dropdown for role */}
+                    <div className="flex justify-end">  
+                        <select
+                            id="role"
+                            {...register("role")}
+                            className=" border border-primary/30 block w-[200px] h-[50px] rounded border border-primary/30 p-4 text-base focus-visible:outline-none focus-visible:ring-1"
+                        >
+                            <option value="candidate">Candidate</option>
+                            <option value="employer">Employer</option>
+                        </select>
+                        {formState.errors.role && (
+                            <p className="mt-2 text-sm text-red-600">
+                                {formState.errors.role.message}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Other Inputs */}
                     <div className="flex flex-row gap-5">
                         <Input
                             className="w-[258px] h-[48px]"
@@ -40,7 +58,7 @@ export const RegisterForm = () => {
                         className="w-[536px] h-[48px]"
                         label="Email Address"
                         register={register("email")}
-                        error={formState.errors["email"]}
+                        error={formState.errors.email}
                     />
                     <Input
                         className="w-[536px] h-[48px]"
@@ -83,6 +101,7 @@ export const RegisterForm = () => {
         </AuthForm>
     );
 };
+
 
 const RegisterSuccessAlert = () => {
     const navigate = useNavigate();

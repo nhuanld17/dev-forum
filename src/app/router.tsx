@@ -1,10 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
-
 /**
  * create router component
  * with createBrowserRouter from react-router-dom and with nested components
  * @returns {RouterComponent}
  */
+const checkAuth = () => {
+  const token = localStorage.getItem("token");
+  const isRole = localStorage.getItem("roleName");
+  const path = window.location.pathname;
+
+  if (!token || !isRole) {
+    window.location.href = "/auth";
+  }
+  const isValidAccess = 
+    (isRole === "candidate" && path.includes("candidate")) ||
+    (isRole === "employer" && path.includes("employer"));
+
+  if (!isValidAccess) {
+    window.location.href = "/auth";
+  }
+  return {};
+};
 export const createRouter = () =>
   createBrowserRouter(
     [
@@ -39,6 +55,7 @@ export const createRouter = () =>
           {
             //candidate
             path: "candidate",
+            loader: checkAuth,
             lazy: async () => {
               const { CandidateRoot } = await import("src/app/routes/app/root-candidate");
               return { Component: CandidateRoot };
@@ -146,6 +163,7 @@ export const createRouter = () =>
           {
             //employer
             path: "employer",
+            loader: checkAuth,
             lazy: async () => {
               const { EmployerRoot } = await import("src/app/routes/app/root-employer");
               return { Component: EmployerRoot };

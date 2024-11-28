@@ -1,18 +1,18 @@
-import { CompanyInfo, JobDetails } from "src/types";
+import { jobDetail } from "src/types";
 import { Link } from "src/components/ui";
 import { Button } from "src/components/ui/buttons";
 import { LocalIcon } from "src/assets/icons";
 import { useOverlay } from "src/components/ui";
 import { ApplyJobOverlay } from "src/components/ui/overlay/components/candidate-overlay";
 
-export const JobDetailTitle = ({ jobdetails, companyInfo }: { jobdetails: JobDetails, companyInfo: CompanyInfo }) => {
+export const JobDetailTitle = ({ jobdetails }: { jobdetails: jobDetail }) => {
     const { display } = useOverlay();
 
     return (
         <div className="flex justify-between py-8">
             <div className="jobtitle-left flex items-center gap-6">
                 <img 
-                    src={companyInfo.profilePictureLink} 
+                    src={jobdetails.profilePictureLink} 
                     alt="logo company" 
                     className="w-[96px] h-[96px] rounded-[999px]" 
                 />
@@ -29,22 +29,22 @@ export const JobDetailTitle = ({ jobdetails, companyInfo }: { jobdetails: JobDet
                         </span>
                     </div>
                     <div className="flex gap-5 text-[16px] text-[#474C54] leading-6">
-                        <Link to={companyInfo.website}>
+                        <Link to={jobdetails.website} className="flex items-center gap-[6px]">
                             <LocalIcon iconName="link" height={20} width={20}/>
                             <span>
-                                {companyInfo.website}
+                                {jobdetails.website}
                             </span>
                         </Link>
-                        <div className="flex">
+                        <div className="flex items-center gap-[6px]">
                             <LocalIcon iconName="phone" height={20} width={20}/>
                             <span>
-                                {companyInfo.phone}
+                                {jobdetails.phone}
                             </span>
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center gap-[6px] ">
                             <LocalIcon iconName="envelope" height={20} width={20}/>
                             <span>
-                                {companyInfo.email}
+                                {jobdetails.email}
                             </span>
                         </div>
                     </div>

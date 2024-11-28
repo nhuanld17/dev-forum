@@ -17,6 +17,8 @@ import link from './link.svg?react';
 import calendar from './CalendarBlank.svg?react';
 import time from './Timer.svg?react';
 import wallet from './Wallet.svg?react';
+import location_gray from './location_gray.svg?react';
+import dollar_gray from './dollar_gray.svg?react';
 
 export {
     bell_ringing,
@@ -37,5 +39,7 @@ export {
     link,
     calendar,
     time,
-    wallet
+    wallet,
+    dollar_gray,
+    location_gray
 }

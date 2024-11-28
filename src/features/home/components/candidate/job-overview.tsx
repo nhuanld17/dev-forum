@@ -1,5 +1,5 @@
-import { JobDetails } from "src/types";
 import { LocalIcon } from "src/assets/icons";
+import { jobDetail } from "src/types";
 
 type BoxInfoProps = {
     image: string;
@@ -24,7 +24,7 @@ const BoxInfo = ({ image, title, value }: BoxInfoProps) => {
 }
 
 
-export const JobOverview = ({ jobdetails }: { jobdetails: JobDetails }) => {
+export const JobOverview = ({ jobdetails }: { jobdetails: jobDetail }) => {
     return (
         <div className="flex flex-col p-8 gap-6 rounded-lg border-2 border-[#E7F0FA]">
             <span className="text-[20px] font-[500] leading-8">

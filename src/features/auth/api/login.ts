@@ -20,7 +20,8 @@ export const useLogin = () => {
   return useMutation({
     mutationFn: postLoginData,
     onSuccess: async (data) => {
-      const item = data.data.data as ResponseUser;
+      const item = data.data as ResponseUser;
+      console.log(item);
       await Promise.all([
         localStorage.setItem("token", item.access_token),
         localStorage.setItem("roleName", item.userLogin.roleName),
@@ -35,7 +36,6 @@ export const useLogin = () => {
     },
     onError: (error: AxiosError) => {
       const data = error.response?.data as ResponseMessage;
-
       addToast({
         title: "Something went wrong",
         message: data?.message || "An unknown error occurred",

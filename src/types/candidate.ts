@@ -36,3 +36,9 @@ export type SocialLink = {
     twitterLink: string;
     linkedLink: string;
 }
+
+export type CandidateContact = {
+    location: string;
+    phoneNumber: string;
+    email: string;
+}

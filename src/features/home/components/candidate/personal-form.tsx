@@ -5,7 +5,7 @@ import { personalSchema, useUpdatePersonal } from "../../api/candidate/update-pe
 import { useState, useRef } from "react";
 import { Input } from "src/components/ui";
 import axios from "axios";
-import { useGetCandidateBasic } from "../../api/candidate/personalBasic";
+import { useGetCandidateBasic } from "../../api/candidate/personal";
 import { CandidateBasic } from "src/types";
 import { useEffect } from "react";
 

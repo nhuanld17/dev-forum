@@ -67,7 +67,7 @@ export const AccountSettingForm = () => {
                         <span className="text-[18px] font-[500] leading-7">
                             Change Password
                         </span>
-                        <div className="flex flex-col gap-4 pb-[30px]">
+                        <div className="flex flex-col gap-4魏t pb-[30px]">
                             <Input
                                 className="w-[867px] h-[56px] focus:outline-none"
                                 label="Current password..."

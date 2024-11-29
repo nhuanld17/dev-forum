@@ -4,9 +4,13 @@ import { Button } from "src/components/ui/buttons";
 import { LocalIcon } from "src/assets/icons";
 import { useOverlay } from "src/components/ui";
 import { ApplyJobOverlay } from "src/components/ui/overlay/components/candidate-overlay";
+import { usePostWishList } from "../../api/candidate/wish-list";
+import { useParams } from "react-router-dom";
 
 export const JobDetailTitle = ({ jobdetails }: { jobdetails: jobDetail }) => {
     const { display } = useOverlay();
+    const update = usePostWishList();
+    const idJob = useParams().id as string;
 
     return (
         <div className="flex justify-between py-8">
@@ -56,6 +60,7 @@ export const JobDetailTitle = ({ jobdetails }: { jobdetails: jobDetail }) => {
                         variant={"ghost"} 
                         endIcon={<LocalIcon iconName="bookmark_blue"/>}
                         className="w-[56px] h-[56px]"
+                        onClick={() => update.mutate(idJob)}
                     />
                     <Button 
                         children={"Apply Now"} 

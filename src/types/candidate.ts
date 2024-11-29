@@ -1,5 +1,4 @@
 //candidate info
-import { facebook } from 'src/assets/icons/icon-login';
 export type CandidateInfo = {
     id: number;
     fullName: string;

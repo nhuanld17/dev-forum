@@ -6,6 +6,15 @@ export type job = {
     profilePictureLink: string;
     maxSalary: number;
 }
+
+export type jobApply = {
+    id: number;
+    title: string;
+    jobType: string;
+    profilePictureLink: string;
+    maxSalary: number;
+}
+
 export type jobDetail = {
     id: number;
     title: string;

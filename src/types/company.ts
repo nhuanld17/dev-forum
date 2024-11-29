@@ -20,3 +20,10 @@ export type CompanyDetails = {
     description: string;
     aboutUs: string;
 }
+export type CompanyIntro = {
+    id: number;
+    companyName: string;
+    teamSize: string;
+    numberJobs: number;
+    profilePictureLink: string;
+}

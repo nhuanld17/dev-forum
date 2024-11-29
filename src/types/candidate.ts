@@ -15,3 +15,12 @@ export type CandidateInfo = {
     mail: string;
 }
 
+export type CandidateBasic = {
+    fullName: string;
+    title: string;
+    gender: number;
+    dateOfBirth: string;
+    porfolio: string;
+    pictureProfileLink: string;
+}
+

@@ -58,7 +58,12 @@ import { bell_ringing,
     time,
     wallet,
     location_gray,
-    dollar_gray
+    dollar_gray,
+    arrow_right_gray,
+    arrow_right_red,
+    bellring_duotone_green,
+    bookmark_duotone_yellow,
+    briefcase_duotone_blue
  } from "./icon-candidate";
 
 import { envelope_white,
@@ -147,7 +152,12 @@ export const icon = {
     time,
     wallet,
     location_gray,
-    dollar_gray
+    dollar_gray,
+    arrow_right_gray,
+    arrow_right_red,
+    bellring_duotone_green,
+    bookmark_duotone_yellow,
+    briefcase_duotone_blue
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

@@ -23,3 +23,14 @@ export const useGetJobDetail = (id: number) => {
     queryFn: () => getJobDetail(id),
   });
 }
+
+export const getJobFollowEmployer = (id: number) => {
+  return apiClient.get<job[]>(`company/jobs/${id}`);
+}
+
+export const useGetJobFollowEmployer = (id: number) => {
+  return useQuery({
+    queryKey: ['getJobFollowEmployer', id],
+    queryFn: () => getJobFollowEmployer(id),
+  });
+}

@@ -12,7 +12,7 @@ export const JobdetailRoute = () => {
 
     const jobDetails = data?.data as jobDetail;
     if (isLoading) {
-        return <div>Đang tải chi tiết công việc...</div>;
+        return <div>Loading...</div>;
     } else {
         return (
             <div className="flex flex-col">

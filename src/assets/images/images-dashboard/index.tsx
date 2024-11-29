@@ -5,6 +5,7 @@ import static_icon_2 from './static-icon-2.png';
 import static_icon_3 from './static-icon-3.png';
 import static_icon_4 from './static-icon-4.png';
 import banner from './banner.png';
+import upload_picture from './upload_picture.png';
 
 
 export {
@@ -14,5 +15,6 @@ export {
     static_icon_2,
     static_icon_3,
     static_icon_4,
-    banner
+    banner,
+    upload_picture
 };

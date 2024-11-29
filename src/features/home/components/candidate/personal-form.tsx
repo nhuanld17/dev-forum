@@ -5,7 +5,7 @@ import { personalSchema, useUpdatePersonal } from "../../api/candidate/update-pe
 import { useState, useRef } from "react";
 import { Input } from "src/components/ui";
 import axios from "axios";
-import { useGetCandidateBasic } from "../../api/candidate/PersonalBasic";
+import { useGetCandidateBasic } from "../../api/candidate/personalBasic";
 import { CandidateBasic } from "src/types";
 import { useEffect } from "react";
 
@@ -110,7 +110,6 @@ export const PersonalForm = () => {
                             value={image}
                             register={methods.register("pictureProfileLink")}
                             error={methods.formState.errors.pictureProfileLink}
-                            onFocus={() => fileInputRef.current?.click()}
                         />
                     </div>
                     <div className="flex flex-col justify-center items-start gap-8">

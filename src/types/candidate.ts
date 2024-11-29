@@ -1,4 +1,5 @@
 //candidate info
+import { facebook } from 'src/assets/icons/icon-login';
 export type CandidateInfo = {
     id: number;
     fullName: string;
@@ -24,3 +25,14 @@ export type CandidateBasic = {
     pictureProfileLink: string;
 }
 
+export type CandidateProfile = {
+    education: string;
+    experience: string;
+    bio: string;
+}
+
+export type SocialLink = {
+    facebookLink: string;
+    twitterLink: string;
+    linkedLink: string;
+}

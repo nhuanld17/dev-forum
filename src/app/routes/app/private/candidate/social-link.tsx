@@ -1,7 +1,9 @@
+import { SocialLinkForm } from "src/features/home/components/candidate/social-link-form"
+
 export const SocialLinkRoute = () => {
     return (
         <div>
-            <h1>Social Link</h1>
+            <SocialLinkForm />
         </div>
     )
 }

@@ -24,6 +24,8 @@ import arrow_right_red from './arrow_right_red.svg?react';
 import bellring_duotone_green from './bellring_duotone_green.svg?react';
 import bookmark_duotone_yellow from './bookmark_duotone_yellow.svg?react';
 import briefcase_duotone_blue from './briefcase_duotone_blue.svg?react';
+import twitter from './twitter.svg?react';
+import linkedin from './linkedin.svg?react';
 
 export {
     bell_ringing,
@@ -51,5 +53,7 @@ export {
     arrow_right_red,
     bellring_duotone_green,
     bookmark_duotone_yellow,
-    briefcase_duotone_blue
+    briefcase_duotone_blue,
+    twitter,
+    linkedin
 }

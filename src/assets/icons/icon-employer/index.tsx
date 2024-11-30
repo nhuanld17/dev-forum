@@ -11,6 +11,11 @@ import arrow_right_white from './arrow_right_white.svg?react';
 import exit from './exit.svg?react';
 import file_text from './file_text.svg?react';
 import download from './download.svg?react';
+import iconBag from './icon_bag.svg?react';
+import iconCardId from './icon_cardid.svg?react';
+import iconActive from './icon_active.svg?react';
+import iconExpire from './icon_expire.svg?react';
+import iconUser from './icon_user.svg?react';
 
 export {
     envelope_white,
@@ -25,5 +30,10 @@ export {
     arrow_right_white,
     exit,
     file_text,
-    download
+    download,
+    iconBag,
+    iconCardId,
+    iconActive,
+    iconExpire,
+    iconUser
 }

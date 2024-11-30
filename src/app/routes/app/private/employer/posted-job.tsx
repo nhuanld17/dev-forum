@@ -1,7 +1,9 @@
+import { JobCreatingForm } from "src/features/home/components/employer/job-creating-form"
+
+
 export const PostedJobRoute = () => {
+
     return (
-        <div>
-            <h1>Posted Job</h1>
-        </div>
+        <JobCreatingForm />        
     )
 }

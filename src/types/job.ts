@@ -33,7 +33,16 @@ export type jobDetail = {
     phone: string;
     website: string;
     email: string;
-    dateEstablished: string;　
+    dateEstablished: string;
     profilePictureLink: string;
     teamSize: string;
+}
+
+export type JobCompany = {
+    id: number;
+    jobTitle: string;
+    jobType: string;
+    numberOfApplications: number;
+    dateRemain: number;
+    active: boolean;
 }

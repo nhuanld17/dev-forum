@@ -80,7 +80,12 @@ import { envelope_white,
     arrow_right_white,
     exit,
     file_text,
-    download
+    download,
+    iconBag,
+    iconCardId,
+    iconActive,
+    iconExpire,
+    iconUser
  } from "./icon-employer"; 
 
 import React from "react";
@@ -161,7 +166,12 @@ export const icon = {
     bookmark_duotone_yellow,
     briefcase_duotone_blue,
     twitter,
-    linkedin
+    linkedin,
+    iconBag,
+    iconCardId,
+    iconActive,
+    iconExpire,
+    iconUser
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

@@ -47,8 +47,9 @@ export const CandidateHeader = () => {
                             My Job
                         </span>
                     </div>
-                    <div>
-
+                    <div className="flex w-[35%] pl-[30px] p-[10px] gap-[20px] border-2 rounded-lg">
+                        <LocalIcon iconName="searchIcon"/>
+                        <input type="text" name="" id="" className="outline-none" placeholder="Job tittle, keyword..."/>
                     </div>
                     <div className="flex items-center gap-6"> 
                         <LocalIcon iconName="bell_ringing"/>

@@ -17,6 +17,15 @@ import link from './link.svg?react';
 import calendar from './CalendarBlank.svg?react';
 import time from './Timer.svg?react';
 import wallet from './Wallet.svg?react';
+import location_gray from './location_gray.svg?react';
+import dollar_gray from './dollar_gray.svg?react';
+import arrow_right_gray from './arrow_right_gray.svg?react';
+import arrow_right_red from './arrow_right_red.svg?react';
+import bellring_duotone_green from './bellring_duotone_green.svg?react';
+import bookmark_duotone_yellow from './bookmark_duotone_yellow.svg?react';
+import briefcase_duotone_blue from './briefcase_duotone_blue.svg?react';
+import twitter from './twitter.svg?react';
+import linkedin from './linkedin.svg?react';
 
 export {
     bell_ringing,
@@ -37,5 +46,14 @@ export {
     link,
     calendar,
     time,
-    wallet
+    wallet,
+    dollar_gray,
+    location_gray,
+    arrow_right_gray,
+    arrow_right_red,
+    bellring_duotone_green,
+    bookmark_duotone_yellow,
+    briefcase_duotone_blue,
+    twitter,
+    linkedin
 }

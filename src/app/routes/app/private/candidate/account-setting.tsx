@@ -1,7 +1,9 @@
+import { AccountSettingForm } from "src/features/home/components/candidate/account-setting-form"
+
 export const AccountSettingRoute = () => {
     return (
         <div>
-            <h1>Account Setting</h1>
+            <AccountSettingForm />
         </div>
     )
 }

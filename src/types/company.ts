@@ -8,19 +8,6 @@ export type CompanyInfo = {
     profilePictureLink: string;
     teamSize: string;
 }
-export type JobDetails = {
-    id: number;
-    title: string;
-    tags: string;
-    postAt: string;
-    expirationDate: string;
-    education: string;
-    maxSalary: number;
-    jobType: string;
-    experience: string;
-    decription: string;
-    responesibility: string;
-}
 export type CompanyDetails = {
     id: number;
     companyName: string;
@@ -32,4 +19,11 @@ export type CompanyDetails = {
     teamSize: string;
     description: string;
     aboutUs: string;
+}
+export type CompanyIntro = {
+    id: number;
+    companyName: string;
+    teamSize: string;
+    numberJobs: number;
+    profilePictureLink: string;
 }

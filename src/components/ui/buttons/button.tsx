@@ -14,7 +14,9 @@ const buttonVariants = cva(
                 ghost: 
                     "hover:bg-black/10 border-[1px] border-[#CEE0F5]",
                 transparent:
-                    "hover:scale-125 bg-white"
+                    "hover:scale-125 bg-white",
+                outlinedblue:
+                    "border bg-[#E7F0FA] text-[#0A65CC]",
 
             },
             size: {

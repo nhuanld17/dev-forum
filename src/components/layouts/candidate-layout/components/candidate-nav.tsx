@@ -25,6 +25,12 @@ const NavItems = [
         activeIcon: "gear_blue",
         unactiveIcon: "gear_gray",
     },
+    {
+        label: "Logout",
+        path:"/auth",
+        activeIcon: "usercircle_gray",
+        unactiveIcon: "usercircle_gray",
+    }
 ]
 
 export const CandidateNav = () => {

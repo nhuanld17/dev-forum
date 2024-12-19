@@ -25,13 +25,19 @@ const NavItems = [
         activeIcon: "gear_blue",
         unactiveIcon: "gear_gray",
     },
+    {
+        label: "Logout",
+        path:"/auth",
+        activeIcon: "usercircle_gray",
+        unactiveIcon: "usercircle_gray",
+    }
 ]
 
 export const EmployerNav = () => {
     return (
         <div className="flex flex-col gap-3 py-6 flex-shrink-0 h-[944px] border-r">
             <span className="w-[248px] text-[12px] text-[#9199A3] font-[500] leading-5 px-5">
-            EMPLOYERS DASHBOARD
+                EMPLOYERS DASHBOARD
             </span>
             <NavListVertical items={NavItems}/>
         </div>

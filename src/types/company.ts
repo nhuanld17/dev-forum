@@ -27,3 +27,4 @@ export type CompanyIntro = {
     numberJobs: number;
     profilePictureLink: string;
 }
+

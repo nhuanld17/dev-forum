@@ -1,8 +1,14 @@
 import { Link } from "src/components/ui/link/link";
 import { LocalIcon } from "src/assets/icons";
-import { NavListHorizontal } from "src/components/ui";
+import { NavListHorizontal, useOverlay } from "src/components/ui";
+import { useGetCandidateBasic } from "src/features/home/api/candidate/personal";
+import { SearchJob } from "src/app/routes/app/private/candidate/search";
 
 export const CandidateHeader = () => {
+    const {data: candidate, isLoading} = useGetCandidateBasic()
+    const {display} = useOverlay();
+
+    if (isLoading) return <div>Loading...</div>;
 
     const menus = [
         {
@@ -46,15 +52,15 @@ export const CandidateHeader = () => {
                         <span className="text-black text-[24px] leading-[40px] font-semibold">
                             My Job
                         </span>
-                    </div>
+                    </div>  
                     <div className="flex w-[35%] pl-[30px] p-[10px] gap-[20px] border-2 rounded-lg">
                         <LocalIcon iconName="searchIcon"/>
-                        <input type="text" name="" id="" className="outline-none" placeholder="Job tittle, keyword..."/>
+                        <input onClick={() =>display(<SearchJob/>)} type="text" name="" id="" className="outline-none" placeholder="Job tittle, keyword..."/>
                     </div>
                     <div className="flex items-center gap-6"> 
                         <LocalIcon iconName="bell_ringing"/>
                         <Link to={`/candidate/profile`}>
-                            <LocalIcon iconName="candidate_avatar" width={48} height={48} className="hover:scale-125"/>
+                            <img src={candidate?.data.pictureProfileLink} alt="" className="h-[48px] w-[48px] hover:scale-125 rounded-[999px]"/>
                         </Link>
                     </div>
                 </div>

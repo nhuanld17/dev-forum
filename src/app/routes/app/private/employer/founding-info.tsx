@@ -1,7 +1,9 @@
+import { FoundingInfoForm } from "src/features/home/components/employer/founding-info-form"
+
 export const FoundingInfoRoute = () => {
     return (
-        <div>
-            <h1>Founding Info</h1>
-        </div>
+        <>
+            <FoundingInfoForm />
+        </>
     )
 }

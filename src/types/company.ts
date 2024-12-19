@@ -33,3 +33,10 @@ export type CompanyInfoSetting = {
     companyName: string;
     aboutUs: string;
 }
+
+export type FoundingInfo = {
+    industryType: string;
+    teamSize: string;
+    yearOfEstablishment: string;
+    companyWebSite: string;
+}

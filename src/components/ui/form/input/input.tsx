@@ -36,28 +36,39 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
   FieldWrapperPassThroughProps &
   VariantProps<typeof inputVariants> & {
     register: Partial<UseFormRegisterReturn>;
+    type?: "text" | "email" | "password" | "select" | "date" | "number"; // Thêm "date"
   };
 
-  /**
-   * Input component.
-   * @param {InputProps} { className, variants, label, error, register, ...props }
-   * @returns {JSX.Element}
-   */
+/**
+ * Input component.
+ * @param {InputProps} { className, variants, label, error, register, ...props }
+ * @returns {JSX.Element}
+ */
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, variants, label, error, register, ...props }: InputProps,
+  { className, variants, label, error, register, type = "text", ...props }: InputProps,
   ref
 ) {
   return (
-    <FieldWrapper
-      error={error}
-    >
+    <FieldWrapper error={error}>
+      {type === "date" ? (
       <input
+        type="date"
         className={inputVariants({ className, variants })}
         placeholder={label}
         ref={ref}
         {...register}
         {...props}
       />
+      ) : (
+      <input
+        type={type}
+        className={inputVariants({ className, variants })}
+        placeholder={label}
+        ref={ref}
+        {...register}
+        {...props}
+      />
+      )}
     </FieldWrapper>
   );
 });

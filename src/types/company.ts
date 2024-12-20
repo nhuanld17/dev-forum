@@ -28,3 +28,21 @@ export type CompanyIntro = {
     profilePictureLink: string;
 }
 
+export type CompanyInfoSetting = {
+    imgLink: string;
+    companyName: string;
+    aboutUs: string;
+}
+
+export type FoundingInfo = {
+    industryType: string;
+    teamSize: string;
+    yearOfEstablishment: string;
+    companyWebSite: string;
+}
+
+export type CompanyContactInfo = {
+    location: string;
+    phoneNumber: string;
+    email: string;
+}

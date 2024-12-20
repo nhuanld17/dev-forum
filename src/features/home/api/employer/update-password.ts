@@ -13,7 +13,7 @@ export const CompanyPassword = z.object({
 });
 
 export const postUpdatePassword = (data : z.infer<typeof CompanyPassword>) => { 
-  return apiClient.post("/company/change-password", data);
+  return apiClient.post("/auth/change-password", data);
 }
 
 export const useUpdatePassword = () => {

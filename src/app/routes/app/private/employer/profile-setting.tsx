@@ -1,7 +1,10 @@
+import { AccountSettingForm } from "src/features/home/components/employer/account-setting-form"
+
+
 export const ProfileSettingRoute = () => {
     return (
-        <div>
-            <h1>Profile Setting</h1>
-        </div>
+        <>
+            <AccountSettingForm />
+        </>
     )
 }

@@ -40,3 +40,9 @@ export type FoundingInfo = {
     yearOfEstablishment: string;
     companyWebSite: string;
 }
+
+export type CompanyContactInfo = {
+    location: string;
+    phoneNumber: string;
+    email: string;
+}

@@ -2,7 +2,6 @@ import { FoundingInfo } from "src/types";
 import { useGetFoundingInfo } from "../../api/employer/founding-info"
 import { FoundingInfoSchema, useUpdateFoundingInfo } from "../../api/employer/update-founding-info";
 import { Button, Form, Input } from "src/components/ui";
-import { useEffect, useState } from "react";
 
 
 
@@ -14,37 +13,14 @@ const formatDateForInput = (isoString: string) => {
 export const FoundingInfoForm = () => {
   const { data, isLoading } = useGetFoundingInfo();
   const update = useUpdateFoundingInfo();
-  const [yearOfEstablishment, setYearOfEstablishment] = useState("");
-  const [foundingInfo, setFoundingInfo] = useState<FoundingInfo>({
-    industryType: "",
-    teamSize: "",
-    yearOfEstablishment: "",
-    companyWebSite: "",
-  });
 
-  useEffect(() => {
-    if (data?.data) {
-      const foundingInfo = data?.data as FoundingInfo;
-      setFoundingInfo({
-        industryType: foundingInfo.industryType || "",
-        teamSize: foundingInfo.teamSize || "",
-        yearOfEstablishment: formatDateForInput(foundingInfo.yearOfEstablishment),
-        companyWebSite: foundingInfo.companyWebSite || "",
-      });
-    } 
-  }, [data]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFoundingInfo((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };  
+  const foundingInfo = data?.data as FoundingInfo;
 
   if (isLoading) {
     return <div>Loading...</div>
   }
+
+  foundingInfo.yearOfEstablishment = formatDateForInput(foundingInfo.yearOfEstablishment);
 
   return (
     <>
@@ -63,12 +39,12 @@ export const FoundingInfoForm = () => {
                   Industry Types
                 </span>
                 <select
-                  value={foundingInfo.industryType}
+                  defaultValue={foundingInfo.industryType}
                   id="industryType"
-                  {...methods.register("industryType", { onChange: handleChange })}
+                  {...methods.register("industryType")}
                   className=" border border-primary/30 block w-[370px] h-[50px] rounded p-4"
                 >
-                  <option value="" disabled>Select...</option>
+                  {/* <option value="" disabled>Select...</option> */}
                   <option value="IT">IT</option>
                   <option value="Finance">Finance</option>
                   <option value="Healthcare">Healthcare</option>
@@ -87,12 +63,12 @@ export const FoundingInfoForm = () => {
                   Team size
                 </span>
                 <select
-                  value={foundingInfo.teamSize}
+                  defaultValue={foundingInfo.teamSize}
                   id="teamSize"
-                  {...methods.register("teamSize", { onChange: handleChange })}
+                  {...methods.register("teamSize")}
                   className=" border border-primary/30 block w-[370px] h-[50px] rounded p-4"
                 >
-                  <option value="" disabled>Select ...</option>
+                  {/* <option value="" disabled>Select ...</option> */}
                   <option value="1-10">1-10</option>
                   <option value="11-50">11-50</option>
                   <option value="51-100">51-100</option>
@@ -113,9 +89,8 @@ export const FoundingInfoForm = () => {
                   Year of Establishment
                 </span>
                 <Input
-                  value={yearOfEstablishment}
+                  defaultValue={foundingInfo.yearOfEstablishment}
                   label=""
-                  onChange={(e) => setYearOfEstablishment(e.target.value)}
                   register={methods.register("yearOfEstablishment")}
                   error={methods.formState.errors.yearOfEstablishment}
                   type="date"
@@ -127,11 +102,9 @@ export const FoundingInfoForm = () => {
                   Company Website
                 </span>
                 <Input
-                  value={foundingInfo.companyWebSite}
-                  label=""
-                  register={methods.register("companyWebSite", { onChange: handleChange })}
+                  defaultValue={foundingInfo.companyWebSite}
+                  register={methods.register("companyWebSite")}
                   error={methods.formState.errors.companyWebSite}
-                  type="text"
                   className="border border-primary/30 block w-[370px] h-[50px] rounded p-4"
                 />
               </div>

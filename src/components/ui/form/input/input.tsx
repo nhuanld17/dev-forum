@@ -50,16 +50,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 ) {
   return (
     <FieldWrapper error={error}>
-      {type === "date" ? (
-      <input
-        type="date"
-        className={inputVariants({ className, variants })}
-        placeholder={label}
-        ref={ref}
-        {...register}
-        {...props}
-      />
-      ) : (
       <input
         type={type}
         className={inputVariants({ className, variants })}
@@ -68,7 +58,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         {...register}
         {...props}
       />
-      )}
     </FieldWrapper>
   );
 });

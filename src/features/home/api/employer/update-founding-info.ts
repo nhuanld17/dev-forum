@@ -7,11 +7,14 @@ import { z } from "zod";
 
 
 export const FoundingInfoSchema = z.object({
-  industryType: z.string().min(1, "Required"),
+  industryType: z.enum(["IT", "Finance", "Healthcare", "Education", "Technology", "Other"]).refine((value) => value !== undefined, {
+    message: "industry type is required",
+  }),
   teamSize: z.string().min(1, "Required"),
-  yearOfEstablishment: z.string().min(1, "Required"),
+  yearOfEstablishment: z.string().refine((value) => value !== undefined, {
+    message: "date of birth is required"
+  }),
   companyWebSite: z.string().min(1, "Required"),
-
 })
 
 const postUpdateFoundingInfoData = (data: z.infer<typeof FoundingInfoSchema>) => {
@@ -32,7 +35,7 @@ export const useUpdateFoundingInfo = () => {
     },
     onError: (error: AxiosError) => {
       const data = error.response?.data as ResponseMessage;
-      
+
       addToast({
         title: "Something went wrong",
         message: data.message,

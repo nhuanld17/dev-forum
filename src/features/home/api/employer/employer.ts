@@ -23,3 +23,14 @@ export const useGetEmployerDetail = (id: number) => {
         queryFn: () => getEmployerDetail(id),
     });
 };
+
+export const getEmployerPictureLink = () => {
+    return apiClient.get<string>("/company/pictureLink");
+};
+
+export const useGetEmployerPictureLink = () => {
+    return useQuery({
+        queryKey: ["getEmployerPictureLink"],
+        queryFn: getEmployerPictureLink,
+    });
+}

@@ -15,7 +15,7 @@ export const  BoxCompanyIntro = ({ companyIntro }: { companyIntro: CompanyIntro 
     };
 
     return (
-        <div onClick={handleButtonClick} className="flex flex-col p-[32px] justify-center items-start gap-6 flex-shrink-0 w-[424px] h-[204px] border rounded-xl hover:scale-[1.01] hover:border-[#0A65CC] hover:bg-gradient-to-r from-[#fff2da] to-[#FFF] ">
+        <div onClick={handleButtonClick} className="flex flex-col p-[32px] justify-center items-start gap-6 flex-shrink-0 w-[424px] h-[204px] border rounded-xl hover:scale-[1.01] hover:border-[#0A65CC] hover:bg-gradient-to-r from-[#fff2da] to-[#FFF] transition-all duration-500 ease-in-out ">
             <div className="flex items-start gap-4">
                 <img src={companyIntro.profilePictureLink} alt="logo company" className="w-[56px] h-[56px] rounded" />
                 <div className="flex flex-col items-start gap-[6px]">

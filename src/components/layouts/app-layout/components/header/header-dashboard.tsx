@@ -1,8 +1,20 @@
 import { Link } from "src/components/ui/link/link";
 import { LocalIcon } from "src/assets/icons";
 import { Button } from "src/components/ui";
+import { useNavigate } from "react-router-dom";
 
 export const AppHeaderDashBoard = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`auth`);
+    };
+
+    const handleButtonClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        handleClick();
+    };
 
     const menus = [
         {label: "Home", path:"/"},
@@ -47,8 +59,8 @@ export const AppHeaderDashBoard = () => {
                         </form>
                     </div>
                     <div className="button-group">
-                        <Button variant="ghost" size="md" className="mr-[10px]" >Sign In</Button>
-                        <Button variant="filled" size="md" >Post A Job</Button>
+                        <Button onClick={handleButtonClick} variant="ghost" size="md" className="mr-[10px]" >Sign In</Button>
+                        <Button onClick={handleButtonClick}variant="filled" size="md" >Post A Job</Button>
                     </div>
                 </div>
             </header>

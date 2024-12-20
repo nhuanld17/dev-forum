@@ -4,15 +4,19 @@ export type CandidateInfo = {
     fullName: string;
     title: string;
     portfolio: string;
-    resumeLink: File | string;
+    resumeLink: string;
     birthDate: string;
-    gender: boolean;
+    gender: number;
     education: string;
     experience: string;
     bio: string;
     location: string;
     phoneNumber: string;
-    mail: string;
+    email: string;
+    facebookLink: string;
+    twitterLink: string;
+    linkedLink: string;
+    pictureProfileLink: string;
 }
 
 export type CandidateBasic = {
@@ -40,4 +44,13 @@ export type CandidateContact = {
     location: string;
     phoneNumber: string;
     email: string;
+}
+
+export type CandidateIntro = {
+    id : number;
+    fullName: string;
+    title:  string;
+    location: string;
+    pictureProfileLink: string;
+    experience: string;
 }

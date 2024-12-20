@@ -18,7 +18,7 @@ export const JobBox = ({ jobProps }: { jobProps: job }) => {
     const navigate = useNavigate();
 
     const handleClick = (id: number) => {
-        navigate(`job-details/${id}`);
+        navigate(`/candidate/job-details/${id}`);
     };
 
     const handleButtonClick = (e: React.MouseEvent) => {
@@ -29,7 +29,7 @@ export const JobBox = ({ jobProps }: { jobProps: job }) => {
     return (
         <div
             onClick={() => handleClick(jobProps.id)} 
-            className="flex w-[1320px] h-[100px] p-8 pr-[41px] items-center justify-between border rounded-[12px] hover:bg-gradient-to-r from-[#fff2da] to-[#FFF] hover:border-[1px] hover:scale-[1.01] hover:border-[blue]"
+            className="flex w-[1020px] h-[100px] p-8 pr-[41px] transition-all duration-500 ease-in-out items-center justify-between border rounded-[12px] hover:bg-gradient-to-r from-[#fff2da] to-[#FFF] hover:border-[1px] hover:scale-[1.01] hover:border-[blue]"
         >
             <div className="flex gap-[20px] items-center justify-center">
                 <img src={jobProps.profilePictureLink} alt="" className="w-[68px] h-[68px] rounded-[6px]"/>

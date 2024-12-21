@@ -6,7 +6,7 @@ import { BoxCandidateIntro } from "./find-candidate";
 
 export const SearchCandidate = () => {
     const { dismiss } = useOverlay();
-    const { data } = useGetAllCandidatesIntro();
+    const { data } = useGetAllCandidatesIntro("", 1, "desc");
 
     const candidates = data?.data || [];
     const [searchText, setSearchText] = useState("");

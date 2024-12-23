@@ -43,7 +43,9 @@ export const NavListVertical: React.FC<NavListProps> = ({ items }: NavListProps)
         return items.map((item) => {
             const isActive = location.pathname == (item.path) || 
                 (location.pathname.startsWith(item.path) && 
-                (item.path == "/candidate/profile/settings" || item.path == "/employer/profile/settings"));
+                ((item.path == "/candidate/profile/settings" || item.path == "/employer/profile/settings")
+                || (item.path == "/employer/profile/my-jobs"))
+            );
             return (
                 <li key={item.path}>
                     <Link

@@ -120,7 +120,7 @@ export const PersonalForm = () => {
                                     <Input
                                         className="w-[350px] h-[48px]"
                                         label=""
-                                        value={candidateBasic.fullName}
+                                        defaultValue={candidateBasic.fullName}
                                         register={methods.register("fullName")}
                                         error={methods.formState.errors.fullName}
                                     />
@@ -160,7 +160,7 @@ export const PersonalForm = () => {
                                         className="w-[350px] h-[48px]"
                                         label=""
                                         type="date"
-                                        value={candidateBasic.dateOfBirth}
+                                        defaultValue={candidateBasic.dateOfBirth}
                                         register={methods.register("dateOfBirth")}
                                         error={methods.formState.errors.dateOfBirth}
                                     />
@@ -173,7 +173,7 @@ export const PersonalForm = () => {
                                 <Input
                                     className="w-[720px] h-[48px]"
                                     label="Website url..."
-                                    value={candidateBasic.porfolio}
+                                    defaultValue={candidateBasic.porfolio}
                                     register={methods.register("porfolio")}
                                     error={methods.formState.errors.porfolio}
                                 />

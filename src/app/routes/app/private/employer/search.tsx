@@ -3,18 +3,15 @@ import { LocalIcon } from "src/assets/icons";
 import { useOverlay } from "src/components/ui";
 import { useGetAllCandidatesIntro } from "src/features/home/api/employer/candidate-intro";
 import { BoxCandidateIntro } from "./find-candidate";
+import { CandidateIntro } from "src/types";
 
 export const SearchCandidate = () => {
     const { dismiss } = useOverlay();
-    const { data } = useGetAllCandidatesIntro();
-
-    const candidates = data?.data || [];
     const [searchText, setSearchText] = useState("");
+    const { data } = useGetAllCandidatesIntro(searchText, 1, "desc");
 
-   
-    const filteredCandidates = candidates.filter((candidates) =>
-        candidates.title.toLowerCase().includes(searchText.toLowerCase())
-    );
+    const candidates = data?.data as CandidateIntro[];
+
 
     return (
         <div onClick={dismiss} className="w-screen h-screen inset-0 flex flex-col bg-gray-500/40 pt-[40px] items-center backdrop-blur-md">
@@ -32,7 +29,7 @@ export const SearchCandidate = () => {
                     onClick={(e) => e.stopPropagation()}
                 />
             </div>
-            {searchText.trim() && (
+            {/* {searchText.trim() && (
                 <div className="flex flex-col gap-[24px] py-[40px] items-center">
                     {filteredCandidates.length > 0 ? (
                         filteredCandidates.slice().reverse().map((candidates) => (
@@ -42,7 +39,14 @@ export const SearchCandidate = () => {
                         <p>No jobs available</p>
                     )}
                 </div>
-            )}
+            )} */}
+
+            <div className="flex flex-col gap-[24px] py-[40px] items-center">
+                {
+                    candidates ? candidates.result.map((candidate) => (
+                        <BoxCandidateIntro candidate={candidate} key={candidate.id} />)) : <div>Null</div>
+                }
+            </div>
         </div>
     );
 };

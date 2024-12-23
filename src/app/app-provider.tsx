@@ -1,4 +1,4 @@
-import { QueryClientProvider } from "@tanstack/react-query"; //provide all queries and mutations to component tree
+ import { QueryClientProvider } from "@tanstack/react-query"; //provide all queries and mutations to component tree
 import { ToastContainer } from "src/components/ui/toast";
 import { queryClient } from "src/lib/react-query";
 

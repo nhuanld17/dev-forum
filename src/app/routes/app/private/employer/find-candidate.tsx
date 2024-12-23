@@ -56,7 +56,7 @@ export const FindCandidateRoute = () => {
     return (
         <div className="pt-[40px] flex gap-3 justify-center items-center pb-[40px]">
             <div className=" w-[360px] border rounded-lg px-[32px] py-[24px] ">
-                <div className="flex flex-col gap-3  pb-[20px] pt-[20px] border-b-2">
+                <div className="flex flex-col gap-3  pb-[20px] pt-[20px] border-b-2"> 
                     <span className="text-[20px] font-[500] leading-8">
                         Experiences
                     </span>

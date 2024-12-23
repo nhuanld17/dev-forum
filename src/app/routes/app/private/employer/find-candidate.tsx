@@ -9,8 +9,13 @@ import { CandidateIntro } from "src/types";
 
 export const BoxCandidateIntro = ({ candidate }: { candidate: CandidateIntro }) => {
     const { display, dismiss } = useOverlay();
+
+    const handleViewProfile = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        display(<OverlayCandidateProfile id={candidate.id} />);
+    }
     return (
-        <div className="flex justify-between items-center rounded-xl border p-[15px] w-[840px] hover:bg-gradient-to-r transition-all duration-500 ease-in-out from-[#fff2da] to-[#FFF] hover:border-[1px] hover:scale-[1.01] hover:border-[blue] hover:">
+        <div className="flex justify-between mb-[20px] items-center rounded-xl border p-[15px] w-[840px] hover:bg-gradient-to-r transition-all duration-500 ease-in-out from-[#fff2da] to-[#FFF] hover:border-[1px] hover:scale-[1.01] hover:border-[blue] hover:">
             <div className="flex items-center gap-[20px] flex-shrink-0">
                 <img src={candidate.pictureProfileLink} alt="avatar candidate" className="w-[76px] h-[76px] rounded-lg" />
                 <div className="flex flex-col justify-center items-start gap-[10px]">
@@ -40,7 +45,7 @@ export const BoxCandidateIntro = ({ candidate }: { candidate: CandidateIntro }) 
                 </Button>
                 <Button
                     endIcon={<LocalIcon iconName="fi_arrow_right" />}
-                    onClick={() => { display(<OverlayCandidateProfile id={candidate.id} />) }}
+                    onClick={(e) => handleViewProfile(e)}
                 >
                     View Profile
                 </Button>

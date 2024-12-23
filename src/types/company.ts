@@ -46,3 +46,15 @@ export type CompanyContactInfo = {
     phoneNumber: string;
     email: string;
 }
+
+export type ApplicationDto = {
+    candidateId: number;
+    applicationId: string;
+    candidatePictureUrl: string;
+    candidateName: string;
+    candidateTitle: string;
+    experience: string;
+    education: string;
+    email: string;
+    cvLink: string;
+}

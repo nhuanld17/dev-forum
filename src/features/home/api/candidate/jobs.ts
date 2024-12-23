@@ -2,14 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "src/lib/api-client";
 import { job, jobApply, jobDetail } from "src/types";
 
-const getAllJobs = () => {
-  return apiClient.get<job[]>('/jobs');
+const getAllJobs = (key: string, currentPage: number, sortDirection: string) => {
+  return apiClient.get<job[]>(`job/search?q=${key}&size=5&page=${currentPage}&sortField=id&sortDirection=${sortDirection}`);
 };
 
-export const useGetAllJobs = () => {
+export const useGetAllJobs = (key: string, currentPage: number, sortDirection: string) => {
   return useQuery({
-    queryKey: ['getAllJobs'],
-    queryFn: getAllJobs,
+    queryKey: ['search', { key, currentPage, sortDirection}],
+    queryFn: () => getAllJobs(key, currentPage, sortDirection),
   });
 };
 

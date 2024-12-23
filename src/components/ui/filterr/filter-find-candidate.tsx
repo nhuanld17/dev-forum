@@ -24,7 +24,7 @@ const BoxFilter = ({ id, name, value }: BoxFilterProps) => {
 
 export const FilterFindCanidate = () => {
     return (
-        <div className="w-[424px] p-[32px] rounded-[12px] border boder-[#E4E5E8]">
+        <div className="w-[424px] p-[32px] mt-24 rounded-[12px] border boder-[#E4E5E8]">
             <div className="flex flex-col gap-3  pb-[20px] pt-[20px] border-b-2">
                 <span className="text-[20px] font-[500] leading-8">
                     Job Type

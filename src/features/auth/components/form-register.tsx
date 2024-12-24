@@ -12,22 +12,23 @@ import { AlertOverlay } from "src/components/ui";
 
 export const RegisterForm = () => {
     const register = useRegister(<RegisterSuccessAlert />);
+
     return (
         <AuthForm
-            h1="Create account."
+            h1="Create Account"
             schema={registerInputSchema}
             onSubmit={(data) => {
                 register.mutate(data);
             }}
         >
             {({ register, formState }) => (
-                <>
-                    {/* Dropdown for role */}
-                    <div className="flex justify-end">  
+                <div className="flex flex-col gap-4">
+                    {/* Dropdown chọn vai trò */}
+                    <div className="flex justify-end">
                         <select
                             id="role"
                             {...register("role")}
-                            className=" border border-primary/30 block w-[200px] h-[50px] rounded p-4 text-base focus-visible:outline-none focus-visible:ring-1"
+                            className="border border-primary/30 block w-full sm:w-[200px] lg:w-[300px] h-[50px] rounded p-4 text-base focus-visible:outline-none focus-visible:ring-1"
                         >
                             <option value="ROLE_CANDIDATE">Candidate</option>
                             <option value="ROLE_COMPANY">Employer</option>
@@ -38,29 +39,28 @@ export const RegisterForm = () => {
                             </p>
                         )}
                     </div>
-
-                    {/* Other Inputs */}
+                    {/* Input khác */}
                     <Input
-                        className="w-[536px] h-[48px]"
+                        className="w-full sm:w-[400px] lg:w-[536px] h-[48px]"
                         label="Full Name"
                         register={register("fullName")}
                         error={formState.errors.fullName}
                     />
                     <Input
-                        className="w-[536px] h-[48px]"
+                        className="w-full sm:w-[400px] lg:w-[536px] h-[48px]"
                         label="Email Address"
                         register={register("email")}
                         error={formState.errors.email}
                     />
                     <Input
-                        className="w-[536px] h-[48px]"
+                        className="w-full sm:w-[400px] lg:w-[536px] h-[48px]"
                         label="Password"
                         type="password"
                         register={register("password")}
                         error={formState.errors.password}
                     />
                     <Input
-                        className="w-[536px] h-[48px]"
+                        className="w-full sm:w-[400px] lg:w-[536px] h-[48px]"
                         label="Confirm Password"
                         type="password"
                         register={register("password")}
@@ -69,30 +69,30 @@ export const RegisterForm = () => {
                     <label className="flex items-center gap-2">
                         <span className="text-gray-600">
                             {"I've read and agree with your "}
-                            <Link
-                                to={"#"}
-                                className="font-bold text-cyan-600"
-                            >
+                            <Link to={"#"} className="font-bold text-cyan-600">
                                 Terms & Services
                             </Link>
                         </span>
                     </label>
+                    {/* Nút đăng ký */}
                     <Button
-                        size={"lg"}
-                        className="mt-4"
+                        size="lg"
+                        className="mt-4 w-full sm:w-auto"
                         type="submit"
                     >
                         Register
                     </Button>
+                    {/* Liên kết login */}
                     <div className="flex items-center justify-center gap-1">
                         {"Already have an account? "}
                         <Link to={"/auth"}>Login</Link>
                     </div>
-                </>
+                </div>
             )}
         </AuthForm>
     );
 };
+
 
 
 const RegisterSuccessAlert = () => {

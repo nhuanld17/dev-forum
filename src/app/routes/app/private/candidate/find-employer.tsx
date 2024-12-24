@@ -13,7 +13,7 @@ export const FindCompanyRoute = () => {
         <div>Loading...</div>
     ) : (
         <div className="flex items-center justify-center">
-            <div className="w-[87%] flex gap-[24px] py-[40px] justify-start flex-wrap">
+            <div className="w-[87%] flex gap-[16px] py-[20px] md:gap-[24px] md:py-[40px] justify-start flex-wrap">
                 {(Array.isArray(companies?.data) && companies) ? (
                     companies.data.map((company: CompanyIntro) => (
                         <BoxCompanyIntro key={company.id} companyIntro={company} />
@@ -23,5 +23,6 @@ export const FindCompanyRoute = () => {
                 )}
             </div>
         </div>
+
     );
 };

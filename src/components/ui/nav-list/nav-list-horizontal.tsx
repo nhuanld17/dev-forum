@@ -23,8 +23,8 @@ const navListVariants = cva("flex items-center gap-4 pt-2 pb-2 px-5 hover:scale-
 type NavItem = {
     label: string;
     path: string;
-    activeIcon?: String;
-    unactiveIcon?: String;
+    activeIcon?: string;
+    unactiveIcon?: string;
 };
 
 type NavListProps = {
@@ -32,8 +32,8 @@ type NavListProps = {
 };
 
 /**
- * How to use: NavListVertical({ items: NavItems })
- * @param param0 
+ * How to use: NavListHorizontal({ items: NavItems })
+ * @param param0
  * @returns {JSX.Element}
  */
 export const NavListHorizontal: React.FC<NavListProps> = ({ items }: NavListProps) => {
@@ -41,9 +41,10 @@ export const NavListHorizontal: React.FC<NavListProps> = ({ items }: NavListProp
 
     const links = useMemo(() => {
         return items.map((item) => {
-            const isActive = location.pathname === item.path
-                || location.pathname.startsWith(item.path) &&
-                    ((item.path === "/candidate/profile" || item.path === "/employer/profile"));
+            const isActive =
+                location.pathname === item.path ||
+                (location.pathname.startsWith(item.path) &&
+                    (item.path === "/candidate/profile" || item.path === "/employer/profile"));
             return (
                 <li key={item.path} className="">
                     <Link

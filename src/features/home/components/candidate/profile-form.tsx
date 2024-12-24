@@ -54,9 +54,9 @@ export const ProfileForm = () => {
                                 className=" border border-primary/30 block w-[470px] h-[50px] rounded p-4 text-base focus-visible:outline-none focus-visible:ring-1"
                             >
                                 <option value="1 year">1 year</option>
-                                <option value="1 - 2 year">1 - 2 year</option>
-                                <option value="2 - 3 year">2 - 3 year</option>
-                                <option value="~ 5 year">~ 5 year</option>
+                                <option value="1 - 2 years">1 - 2 years</option>
+                                <option value="2 - 3 years">2 - 3 years</option>
+                                <option value="~ 5 years">~ 5 years</option>
                             </select>
                             {methods.formState.errors.experience && (
                                 <p className="mt-2 text-sm text-red-600">

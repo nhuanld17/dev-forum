@@ -65,7 +65,7 @@ export const FilterFindJob = ({ filters, onFilterChange }: {
                 <span className="text-[20px] font-[500] leading-8">
                     Experiences
                 </span>
-                <BoxFilter id="5" name="experiences" value="1 years"
+                <BoxFilter id="5" name="experiences" value="1 year"
                 selectedValue={filters.experiences}
                 onChange={onFilterChange}
                 />

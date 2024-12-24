@@ -85,7 +85,9 @@ import { envelope_white,
     iconCardId,
     iconActive,
     iconExpire,
-    iconUser
+    iconUser,
+    iconDelete,
+    iconEdit
  } from "./icon-employer"; 
 
 import React from "react";
@@ -171,7 +173,9 @@ export const icon = {
     iconCardId,
     iconActive,
     iconExpire,
-    iconUser
+    iconUser,
+    iconDelete,
+    iconEdit
 } satisfies Record<
     string,
     React.FunctionComponent<React.SVGProps<SVGSVGElement>>

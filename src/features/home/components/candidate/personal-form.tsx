@@ -130,7 +130,7 @@ export const PersonalForm = () => {
                                     <Input
                                         className="w-[350px] h-[48px]"
                                         label=""
-                                        value={candidateBasic.title}
+                                        defaultValue={candidateBasic.title}
                                         register={methods.register("title")}
                                         error={methods.formState.errors.title}
                                     />

@@ -111,13 +111,7 @@ export const FindCandidateRoute = () => {
         <div className="pt-[20px] flex flex-row gap-3 items-start justify-center pb-[80px]">
             <div>
                 <FindCandidateFilter filters={filters} onFilterChange={handleFilterChange} />
-                <Button
-                    className="mt-[25px] w-[150px] h-[56px] bg-[#FF6B00] text-[#FFFFFF] rounded-[8px] focus:outline-none"
-                    type="submit"
-                    onClick={handleDeselect}
-                >
-                    Deselect
-                </Button>
+                
             </div>
             <div className="pt-[40px] w-[840px] flex-col gap-3 justify-center">
                 <div className="flex items-center justify-between mb-[10px] w-full">

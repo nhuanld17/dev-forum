@@ -1,27 +1,42 @@
 
 import { useState } from "react";
-import { FilterFindCanidate } from "src/components/ui/filterr";
+import { Button } from "src/components/ui";
+import { FilterFindJob } from "src/components/ui/filter/filter-find-job";
 import { useGetAllJobs } from "src/features/home/api/candidate/jobs";
 import { JobBox } from "src/features/home/components/candidate/job-box";
 export const FindJobRoute = () => {
 
     const [page, setPage] = useState(1);
     const [sortDirection, setSortDirection] = useState('desc');
-    const { data } = useGetAllJobs('', page, sortDirection);
 
-    console.log(data);
+    const [filter, setFilters] = useState({
+        jobType: '',
+        experiences: ''
+    });
+
+    const { data, isLoading } = useGetAllJobs('', page, sortDirection, filter.experiences, filter.jobType);
+
+    const handleFilterChange = (name: string, value: string) => {
+        setFilters((prevFilters) => ({
+            ...prevFilters,
+            [name]: value,
+        }));
+    };
+
+    const handleDeselect = () => {
+        setFilters({
+            jobType: '',
+            experiences: '',
+        });
+    }
+
     const jobs = data?.data;
+    const totalPages = data?.data.meta.pages;
 
-    // Lấy tổng số việc làm từ dữ liệu trả về
-    const totalJobs = data?.data.meta.total;
-    const totalPages = data?.data.meta.pages; // Tổng số trang
-
-    // Hàm thay đổi hướng sắp xếp
     const handleSortChange = (e) => {
         setSortDirection(e.target.value);
     };
 
-    // Hàm thay đổi trang
     const handlePageChange = (newPage: number) => {
         if (newPage > 0 && newPage <= totalPages) {
             setPage(newPage);
@@ -30,7 +45,18 @@ export const FindJobRoute = () => {
 
     return (
         <div className="flex gap-6 justify-center items-start">
-            <FilterFindCanidate />
+            <div>
+                <FilterFindJob
+                    filters={filter} onFilterChange={handleFilterChange}
+                />
+                <Button
+                    className="mt-[25px] w-[150px] h-[56px] bg-[#FF6B00] text-[#FFFFFF] rounded-[8px] focus:outline-none"
+                    type="submit"
+                    onClick={handleDeselect}
+                >
+                    Deselect
+                </Button>
+            </div>
             <div className="flex flex-col gap-[24px] py-[40px] items-center">
                 <div className="flex w-full justify-end">
                     <select

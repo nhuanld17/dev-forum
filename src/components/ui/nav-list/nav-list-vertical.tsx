@@ -25,6 +25,7 @@ type NavItem = {
     path: string;
     activeIcon: String;
     unactiveIcon: String;
+    logout?: () => void;
 };
 
 type NavListProps = {
@@ -47,7 +48,13 @@ export const NavListVertical: React.FC<NavListProps> = ({ items }: NavListProps)
                 || (item.path == "/employer/profile/my-jobs"))
             );
             return (
-                <li key={item.path}>
+                <li 
+                    key={item.path}
+                    onClick={() => {
+                        if (item.logout) item.logout();
+                    }}
+                    
+                >
                     <Link
                         to={item.path}
                         className={isActive ? navListVariants({ variant: "active" }) : navListVariants({ variant: "unactive" })}

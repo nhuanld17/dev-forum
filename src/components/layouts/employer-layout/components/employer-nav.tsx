@@ -30,8 +30,14 @@ const NavItems = [
         path:"/auth",
         activeIcon: "usercircle_gray",
         unactiveIcon: "usercircle_gray",
+        logout: () => logoutCheck(),
     }
 ]
+
+const logoutCheck = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+}
 
 export const EmployerNav = () => {
     return (

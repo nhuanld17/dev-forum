@@ -46,3 +46,19 @@ export type JobCompany = {
     dateRemain: number;
     active: boolean;
 }
+
+export type jobInfo = {
+    id: number;
+    title: string;
+    tags: string;   
+    maxSalary: number;
+    salaryType: string;
+    education: string;
+    experience: string;
+    jobType: string;
+    jobRole: string;
+    expirationDate: string;
+    jobLevel: string;
+    description: string;
+    responsibility: string;
+}

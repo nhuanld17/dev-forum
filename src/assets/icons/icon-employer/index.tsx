@@ -16,6 +16,8 @@ import iconCardId from './icon_cardid.svg?react';
 import iconActive from './icon_active.svg?react';
 import iconExpire from './icon_expire.svg?react';
 import iconUser from './icon_user.svg?react';
+import iconDelete from './icon_Delete.svg?react';
+import iconEdit from './icon_Edit.svg?react';
 
 export {
     envelope_white,
@@ -35,5 +37,7 @@ export {
     iconCardId,
     iconActive,
     iconExpire,
-    iconUser
+    iconUser,
+    iconDelete,
+    iconEdit
 }

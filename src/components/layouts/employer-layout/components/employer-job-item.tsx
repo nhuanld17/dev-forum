@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
 import { LocalIcon } from "src/assets/icons";
+import { Button } from "src/components/ui";
+import { useDeleteJobById } from "src/features/home/api/employer/delete-job";
+import { JobCompany } from "src/types";
 
 export const JobList = ({ jobs }) => {
+
+  const deleteJob = useDeleteJobById();
+
+  const handleClickDelete = (id: number) => {
+    const confirmed = window.confirm("Are you sure you want to delete this job?");
+    if (confirmed) {
+      deleteJob.mutate(id);
+      window.location.reload(); 
+    } 
+  }
+
   return (
     <div className="list">
-      {jobs.map((job) => (
+      {jobs.map((job: JobCompany) => (
         <div key={job.id} className="item flex items-center p-[20px] gap-5 border-b-[2px] border-b-">
           {/* Job Information */}
           <div className="w-[368px]">
@@ -33,6 +47,19 @@ export const JobList = ({ jobs }) => {
           >
             View Applications
           </Link>
+
+          {/* Edit job */}
+          <Link to={`/employer/profile/my-jobs/${job.id}/edit`}>
+            <LocalIcon iconName="iconEdit" className="cursor-pointer" height={24} width={24} />
+          </Link>
+
+          {/* Xóa job */}
+          <LocalIcon
+            iconName="iconDelete" className="cursor-pointer"
+            height={24}
+            width={24}
+            onClick={() => handleClickDelete(job.id)} 
+          />
         </div>
       ))}
     </div>

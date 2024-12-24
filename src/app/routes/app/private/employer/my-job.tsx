@@ -41,7 +41,7 @@ export const MyJobRoute = () => {
             </div>
 
             <div className="h-[38px] px-5 py-2.5 bg-[#f1f2f4] rounded justify-center items-center gap-5 inline-flex">
-                <div className="w-[368px] text-[#474c54] text-xs font-normal leading-[18px]">JOBS</div>
+                <div className="w-[245px] text-[#474c54] text-xs font-normal leading-[18px]">JOBS</div>
                 <div className="w-[88px] text-[#474c54] text-xs font-normal leading-[18px]">STATUS</div>
                 <div className="w-[184px] text-[#474c54] text-xs font-normal leading-[18px]">APPLICATIONS</div>
                 <div className="w-[220px] text-[#474c54] text-xs font-normal leading-[18px]">ACTIONS</div>

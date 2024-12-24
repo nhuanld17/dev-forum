@@ -203,6 +203,13 @@
                             const { ApplicationsRoute } = await import("src/app/routes/app/private/employer/application");
                             return { Component: ApplicationsRoute }
                           },
+                        },
+                        {
+                          path: ":id/edit",
+                          lazy: async () => {
+                            const { UpdateJobRoute } = await import("src/app/routes/app/private/employer/update-job");
+                            return { Component: UpdateJobRoute }
+                          }
                         }
                       ]
                     },

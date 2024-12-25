@@ -7,7 +7,7 @@ import { useToast } from "src/components/ui";
 
 export const applyJobSchema = z.object({
     idJob: z.string(),
-    cvLink: z.string().url(),
+    cvLink: z.string(),
 });
 
 export const postApplyJob = (data: z.infer<typeof applyJobSchema>) => {

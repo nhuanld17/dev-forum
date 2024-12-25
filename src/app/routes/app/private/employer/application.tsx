@@ -25,7 +25,6 @@ export const ApplicationsRoute = () => {
   const applications = data?.data as ApplicationDto[];
 
   if (isLoading) return <div>Loading...</div>;
-
   // Lấy tổng số việc làm từ dữ liệu trả về
   const totalApplications = data?.data.meta.total;
   const totalPages = data?.data.meta.pages; // Tổng số trang
@@ -41,7 +40,7 @@ export const ApplicationsRoute = () => {
       setPage(newPage);
     }
   };
-
+  //  const link = "https://api.cloudinary.com/v1_1/dhsv9jnul/raw/download?api_key=818748115127534&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiZjY2ZDE0ODk2YTE5YjI3ZDRiOGQ0YzAxMzFmMTM4MTciLCJ1c2VyX2V4dGVybmFsX2lkIjoiZjQ1ZmE3MzFmMTIwNjkzMGM1MjFkZDVmZGExMWFlIiwidXNlcl9jdXN0b21faWQiOiJkeHVhbnRpZW41QGdtYWlsLmNvbSIsImNvbXBvbmVudCI6ImNvbnNvbGUifQ%3D%3D&public_id=my_job%2Fdangngoctai.pdf&signature=95ffa2b4166d6937eb989d0025eafb5ea2a2e3ed&source=ml&target_filename=DangNgocTai_BackendDeveloper&timestamp=1735098485&type=upload";
   // Hàm kích hoạt tìm kiếm
   const handleSearch = () => {
     setSearchQuery(textSearch); // Cập nhật giá trị để gọi API
@@ -55,6 +54,24 @@ export const ApplicationsRoute = () => {
     }
     window.location.reload(); // Refresh trang sau khi xóa
   }
+  const handleDownload = async (link:string) => {
+    const url = link;
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = blobUrl;
+    a.download = "CV.jpg"; // Đặt tên file khi tải xuống
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Giải phóng URL Blob
+    window.URL.revokeObjectURL(blobUrl);
+  };
+
+
 
   return (
     <>
@@ -114,7 +131,13 @@ export const ApplicationsRoute = () => {
                   </ul>
                 </div>
                 <div className="bottom mt-[16px] flex justify-between">
-                  <a className="text-[#0A65CC] font-[600]" href={application.cvLink}>Dowload CV</a>
+                  <button
+                    onClick={() =>handleDownload(application.cvLink)}
+                    className="text-[#0A65CC] font-[600]"
+                  >
+                    Download CV
+                  </button>
+
                   <a className="text-[#E05251] font-[600]" href="#" onClick={() => handleDelete(application.applicationId)}>Delete</a>
                 </div>
               </div>

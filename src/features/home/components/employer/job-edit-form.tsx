@@ -161,9 +161,9 @@ export const JobEditingForm = () => {
                     Select...
                   </option>
                   <option value="1 year">1 year</option>
-                  <option value="1 - 2 year">1 - 2 year</option>
-                  <option value="2 - 3 year">2 - 3 year</option>
-                  <option value="~ 5 year">~ 5 year</option>
+                  <option value="1 - 2 years">1 - 2 years</option>
+                  <option value="2 - 3 years">2 - 3 years</option>
+                  <option value="~ 5 years">~ 5 years</option>
                 </select>
                 {methods.formState.errors.experience && (
                   <p className="mt-2 text-sm text-red-600">
@@ -184,9 +184,10 @@ export const JobEditingForm = () => {
                   <option value="" disabled selected>
                     Select...
                   </option>
-                  <option value="Full-time">Full-time</option>
-                  <option value="Part-time">Part-time</option>
-                  <option value="Contract">Contract</option>
+                  <option value="Full time">Full time</option>
+                  <option value="Part time">Part time</option>
+                  <option value="Remote">Remote</option>
+                  <option value="Internship">Internship</option>
                 </select>
                 {methods.formState.errors.jobType && (
                   <p className="mt-2 text-sm text-red-600">

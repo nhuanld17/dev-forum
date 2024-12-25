@@ -65,14 +65,14 @@ export const FilterFindJob = ({
                     onChange={onFilterChange}
                 />
             </div>
-            <div className="flex flex-col gap-3 pb-[20px] pt-[20px]">
-                <span className="text-[16px] md:text-[20px] font-[500] leading-7 md:leading-8">Experiences</span>
-                <BoxFilter
-                    id="5"
-                    name="experiences"
-                    value="1 years"
-                    selectedValue={filters.experiences}
-                    onChange={onFilterChange}
+
+            <div className="flex flex-col gap-3  pb-[20px] pt-[20px]">
+                <span className="text-[20px] font-[500] leading-8">
+                    Experiences
+                </span>
+                <BoxFilter id="5" name="experiences" value="1 year"
+                selectedValue={filters.experiences}
+                onChange={onFilterChange}
                 />
                 <BoxFilter
                     id="6"

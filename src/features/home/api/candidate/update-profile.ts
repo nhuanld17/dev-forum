@@ -9,7 +9,7 @@ export const profileSchema = z.object({
     education: z.enum(["Graduate", "Master", "12/12","College"]).refine((value) => value !== undefined, {
         message: "education is required",
     }),
-    experience: z.enum(["1 year", "1 - 2 year", "2 - 3 year", "~ 5 year"]).refine((value) => value !== undefined, {
+    experience: z.enum(["1 years", "1 - 2 years", "2 - 3 years", "~ 5 years"]).refine((value) => value !== undefined, {
         message: "experience is required",
     }),
     bio: z.string().min(1, "Required"),

@@ -47,32 +47,22 @@ export const FindCandidateFilter = ({ filters, onFilterChange }: {
         </span>
         <div className="flex flex-col gap-4">
           <BoxFilter
-            props={{ id: "1", name: "experiences", value: "Less than 1 year", title: "Less than 1 year" }}
+            props={{ id: "1", name: "experiences", value: "1 year", title: "Less than 1 year" }}
             selectedValue={filters.experiences}
             onChange={onFilterChange}
           />
           <BoxFilter
-            props={{ id: "2", name: "experiences", value: "1-2 years", title: "1-2 years" }}
+            props={{ id: "2", name: "experiences", value: "1 - 2 years", title: "1-2 years" }}
             selectedValue={filters.experiences}
             onChange={onFilterChange}
           />
           <BoxFilter
-            props={{ id: "3", name: "experiences", value: "2-3 years", title: "2-3 years" }}
+            props={{ id: "3", name: "experiences", value: "2 - 3 years", title: "2-3 years" }}
             selectedValue={filters.experiences}
             onChange={onFilterChange}
           />
           <BoxFilter
-            props={{ id: "4", name: "experiences", value: "3-4 years", title: "3-4 years" }}
-            selectedValue={filters.experiences}
-            onChange={onFilterChange}
-          />
-          <BoxFilter
-            props={{ id: "5", name: "experiences", value: "4-5 years", title: "4-5 years" }}
-            selectedValue={filters.experiences}
-            onChange={onFilterChange}
-          />
-          <BoxFilter
-            props={{ id: "6", name: "experiences", value: "More than 5 years", title: "More than 5 years" }}
+            props={{ id: "4", name: "experiences", value: "~ 5 years", title: "~ 5 years" }}
             selectedValue={filters.experiences}
             onChange={onFilterChange}
           />
